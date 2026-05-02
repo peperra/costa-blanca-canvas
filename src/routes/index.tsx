@@ -1,5 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logoWordmark from "@/assets/logo-wordmark.svg";
+import printCollDeRates from "@/assets/print-coll-de-rates.png";
+
+// TODO: replace with real Shopify product URLs once the store is live
+const SHOPIFY_BASE = "#shopify";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -27,6 +31,8 @@ const climbs = [
     avg: "5.4",
     elev: "626",
     copy: "A steady rhythm through pine and light.",
+    image: printCollDeRates,
+    shopUrl: `${SHOPIFY_BASE}/products/coll-de-rates`,
   },
   {
     name: "Puerto de Tudons",
@@ -34,6 +40,8 @@ const climbs = [
     avg: "5.5",
     elev: "1025",
     copy: "A quiet road between limestone giants.",
+    image: null,
+    shopUrl: `${SHOPIFY_BASE}/products/puerto-de-tudons`,
   },
   {
     name: "Cumbres del Sol",
@@ -41,8 +49,12 @@ const climbs = [
     avg: "9.95",
     elev: "366",
     copy: "Short, sharp, and ending at the sea.",
+    image: null,
+    shopUrl: `${SHOPIFY_BASE}/products/cumbres-del-sol`,
   },
 ];
+
+const SWEATSHIRT_SHOP_URL = `${SHOPIFY_BASE}/products/after-cycling-sweatshirt-coll-de-rates`;
 
 function HeroIllustration() {
   return (
@@ -179,8 +191,17 @@ function Index() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
           {climbs.map((c, i) => (
             <article key={c.name} className="flex flex-col">
-              <div className="aspect-[4/5] mb-6 overflow-hidden">
-                <PrintIllustration variant={i + 1} />
+              <div className="aspect-[4/5] mb-6 overflow-hidden bg-limestone/40">
+                {c.image ? (
+                  <img
+                    src={c.image}
+                    alt={`${c.name} — col.cc art print`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <PrintIllustration variant={i + 1} />
+                )}
               </div>
               <p className="data-label mb-3">Print N° 0{i + 1}</p>
               <h3 className="font-serif text-2xl md:text-3xl text-forest mb-3 uppercase tracking-tight">
@@ -191,10 +212,12 @@ function Index() {
               </p>
               <p className="text-asphalt mb-6 leading-relaxed">{c.copy}</p>
               <a
-                href="#"
+                href={c.shopUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="data-label text-teal border-b border-teal pb-1 self-start hover:text-forest hover:border-forest transition-colors"
               >
-                View print →
+                Buy print →
               </a>
             </article>
           ))}
@@ -222,7 +245,9 @@ function Index() {
               <span className="data-mono text-sm">6.5 · 5.4 · 626</span>
             </div>
             <a
-              href="#"
+              href={SWEATSHIRT_SHOP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-teal text-offwhite px-8 py-4 data-label hover:bg-forest transition-colors"
             >
               Shop sweatshirt
