@@ -188,14 +188,26 @@ function Index() {
           <p className="data-mono text-sm hidden md:block">03 / 03</p>
         </div>
 
-        {/* Small index of the three prints */}
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-20 md:mb-28">
+        {/* Small index of the three prints — horizontal, name on top, image below */}
+        <ul className="grid grid-cols-3 gap-4 md:gap-8 mb-20 md:mb-28">
           {climbs.map((c, i) => (
-            <li key={`idx-${c.name}`} className="flex items-baseline gap-3">
-              <span className="data-mono text-sm text-teal">1.{i + 1}</span>
-              <span className="font-serif text-lg md:text-xl text-forest uppercase tracking-tight">
+            <li key={`idx-${c.name}`} className="flex flex-col">
+              <p className="data-mono text-xs text-teal mb-1">1.{i + 1}</p>
+              <p className="font-serif text-sm md:text-base text-forest uppercase tracking-tight mb-3 leading-tight">
                 {c.name}
-              </span>
+              </p>
+              <div className="aspect-[4/5] overflow-hidden bg-limestone/40">
+                {c.image ? (
+                  <img
+                    src={c.image}
+                    alt={`${c.name} thumbnail`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <PrintIllustration variant={i + 1} />
+                )}
+              </div>
             </li>
           ))}
         </ul>
