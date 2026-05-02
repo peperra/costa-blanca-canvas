@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import logoWordmark from "@/assets/logo-wordmark.svg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -127,7 +128,9 @@ function Index() {
     <div className="min-h-screen bg-background">
       {/* Nav */}
       <header className="px-6 md:px-12 lg:px-20 py-6 flex items-center justify-between">
-        <a href="#top" className="font-serif text-xl text-forest">col.cc</a>
+        <a href="#top" aria-label="col.cc" className="block">
+          <img src={logoWordmark} alt="col.cc" className="h-8 md:h-9 w-auto" />
+        </a>
         <nav className="hidden md:flex gap-10 data-label">
           <a href="#prints" className="hover:text-teal transition-colors">Prints</a>
           <a href="#sweatshirt" className="hover:text-teal transition-colors">Sweatshirt</a>
@@ -275,7 +278,7 @@ function Index() {
       <footer className="px-6 md:px-12 lg:px-20 py-16 mt-12">
         <div className="hairline pt-10 grid grid-cols-2 md:grid-cols-4 gap-8 items-start">
           <div>
-            <p className="font-serif text-xl text-forest mb-2">col.cc</p>
+            <img src={logoWordmark} alt="col.cc" className="h-7 w-auto mb-3" />
             <p className="data-mono text-xs text-asphalt">Born in Costa Blanca</p>
           </div>
           <div>
