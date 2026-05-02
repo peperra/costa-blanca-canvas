@@ -2,25 +2,305 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "col.cc — The climb, remembered." },
+      {
+        name: "description",
+        content:
+          "Collector-grade art prints of Spain's iconic mountain passes. Drop 1 · Costa Blanca.",
+      },
+      { property: "og:title", content: "col.cc — The climb, remembered." },
+      {
+        property: "og:description",
+        content: "Collector-grade art prints of Spain's iconic mountain passes.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+const climbs = [
+  {
+    name: "Coll de Rates",
+    km: "6.5",
+    avg: "5.4",
+    elev: "626",
+    copy: "A steady rhythm through pine and light.",
+  },
+  {
+    name: "Puerto de Tudons",
+    km: "7.0",
+    avg: "5.5",
+    elev: "1025",
+    copy: "A quiet road between limestone giants.",
+  },
+  {
+    name: "Cumbres del Sol",
+    km: "3.68",
+    avg: "9.95",
+    elev: "366",
+    copy: "Short, sharp, and ending at the sea.",
+  },
+];
+
+function HeroIllustration() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
+    <svg
+      viewBox="0 0 600 500"
+      className="w-full h-auto"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
     >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+      {/* Sun */}
+      <circle cx="430" cy="140" r="60" fill="var(--mustard)" />
+      {/* Distant mountain */}
+      <path d="M0 360 L120 220 L230 320 L340 200 L470 340 L600 240 L600 500 L0 500 Z" fill="var(--teal)" opacity="0.35" />
+      {/* Front mountain */}
+      <path d="M0 420 L100 300 L200 380 L310 260 L420 380 L520 320 L600 380 L600 500 L0 500 Z" fill="var(--teal)" />
+      {/* Road */}
+      <path
+        d="M40 500 C 200 460, 220 420, 320 410 S 480 380, 560 360"
+        stroke="var(--offwhite)"
+        strokeWidth="3"
+        strokeDasharray="8 10"
+        fill="none"
       />
-    </div>
+      {/* Cyclist silhouette */}
+      <g transform="translate(260 388)">
+        <circle cx="0" cy="-22" r="6" fill="var(--forest)" />
+        <path d="M-10 0 L0 -16 L12 -2" stroke="var(--forest)" strokeWidth="3" fill="none" strokeLinecap="round" />
+        <circle cx="-12" cy="6" r="9" stroke="var(--forest)" strokeWidth="2.5" fill="none" />
+        <circle cx="14" cy="6" r="9" stroke="var(--forest)" strokeWidth="2.5" fill="none" />
+      </g>
+    </svg>
+  );
+}
+
+function PrintIllustration({ variant }: { variant: number }) {
+  const peaks = [
+    "M0 220 L80 80 L150 160 L240 60 L320 180 L400 120 L400 260 L0 260 Z",
+    "M0 240 L60 140 L130 200 L210 100 L300 180 L380 60 L400 200 L400 260 L0 260 Z",
+    "M0 230 L100 200 L180 100 L260 180 L340 40 L400 160 L400 260 L0 260 Z",
+  ];
+  return (
+    <svg viewBox="0 0 400 260" className="w-full h-full" preserveAspectRatio="none">
+      <rect width="400" height="260" fill="var(--teal)" />
+      <circle cx={variant === 1 ? 310 : variant === 2 ? 90 : 260} cy="70" r="22" fill="var(--mustard)" />
+      <path d={peaks[variant - 1]} fill="var(--forest)" opacity="0.55" />
+      <path
+        d={peaks[variant - 1].replace("220", "240").replace("80", "120")}
+        fill="var(--forest)"
+      />
+    </svg>
+  );
+}
+
+function SweatshirtIllustration() {
+  return (
+    <svg viewBox="0 0 500 500" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+      <rect width="500" height="500" fill="var(--limestone)" />
+      {/* Sweatshirt silhouette */}
+      <path
+        d="M150 140 L110 180 L80 280 L120 300 L140 250 L140 420 L360 420 L360 250 L380 300 L420 280 L390 180 L350 140 L300 130 Q250 165 200 130 Z"
+        fill="var(--offwhite)"
+      />
+      {/* Neckline */}
+      <path d="M210 140 Q250 170 290 140" stroke="var(--limestone)" strokeWidth="3" fill="none" />
+      {/* Chest wordmark */}
+      <text
+        x="250"
+        y="240"
+        textAnchor="middle"
+        fontFamily="DM Serif Display, serif"
+        fontSize="22"
+        fill="var(--forest)"
+      >
+        col.cc
+      </text>
+    </svg>
   );
 }
 
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Nav */}
+      <header className="px-6 md:px-12 lg:px-20 py-6 flex items-center justify-between">
+        <a href="#top" className="font-serif text-xl text-forest">col.cc</a>
+        <nav className="hidden md:flex gap-10 data-label">
+          <a href="#prints" className="hover:text-teal transition-colors">Prints</a>
+          <a href="#sweatshirt" className="hover:text-teal transition-colors">Sweatshirt</a>
+          <a href="#origin" className="hover:text-teal transition-colors">Origin</a>
+          <a href="#climbs" className="hover:text-teal transition-colors">Climbs</a>
+        </nav>
+      </header>
+
+      {/* HERO */}
+      <section id="top" className="px-6 md:px-12 lg:px-20 pt-12 md:pt-24 pb-24 md:pb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-7">
+            <p className="data-label mb-8">Drop 01 — Costa Blanca</p>
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-forest leading-[1.02] mb-8">
+              The climb,<br />remembered.
+            </h1>
+            <p className="text-lg md:text-xl text-asphalt max-w-xl mb-10 leading-relaxed">
+              Collector-grade art prints of Spain's iconic mountain passes.
+              Drop 1 · Costa Blanca.
+            </p>
+            <a
+              href="#prints"
+              className="inline-block bg-teal text-offwhite px-8 py-4 data-label hover:bg-forest transition-colors"
+            >
+              Shop the collection
+            </a>
+          </div>
+          <div className="lg:col-span-5">
+            <HeroIllustration />
+          </div>
+        </div>
+      </section>
+
+      {/* PRINTS */}
+      <section id="prints" className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
+        <div className="flex items-end justify-between mb-16 hairline pt-8">
+          <div>
+            <p className="data-label mb-3">The Prints</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-forest">
+              Drop 1 · Costa Blanca
+            </h2>
+          </div>
+          <p className="data-mono text-sm hidden md:block">03 / 03</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
+          {climbs.map((c, i) => (
+            <article key={c.name} className="flex flex-col">
+              <div className="aspect-[4/5] mb-6 overflow-hidden">
+                <PrintIllustration variant={i + 1} />
+              </div>
+              <p className="data-label mb-3">Print N° 0{i + 1}</p>
+              <h3 className="font-serif text-2xl md:text-3xl text-forest mb-3 uppercase tracking-tight">
+                {c.name}
+              </h3>
+              <p className="data-mono text-xs mb-4">
+                {c.km} · {c.avg} · {c.elev}
+              </p>
+              <p className="text-asphalt mb-6 leading-relaxed">{c.copy}</p>
+              <a
+                href="#"
+                className="data-label text-teal border-b border-teal pb-1 self-start hover:text-forest hover:border-forest transition-colors"
+              >
+                View print →
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* SWEATSHIRT */}
+      <section id="sweatshirt" className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="aspect-square">
+            <SweatshirtIllustration />
+          </div>
+          <div>
+            <p className="data-label mb-6">The Sweatshirt</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">
+              After Cycling Sweatshirt<br />
+              <span className="text-asphalt">— Coll de Rates</span>
+            </h2>
+            <p className="text-lg text-asphalt leading-relaxed mb-8 max-w-md">
+              No hood. Sand. col.cc on the chest. The profile of Coll de Rates on the back.
+              For arriving at the café, not for climbing the pass.
+            </p>
+            <div className="flex items-center gap-6 mb-10 hairline pt-6">
+              <span className="data-label">Back print</span>
+              <span className="data-mono text-sm">6.5 · 5.4 · 626</span>
+            </div>
+            <a
+              href="#"
+              className="inline-block bg-teal text-offwhite px-8 py-4 data-label hover:bg-forest transition-colors"
+            >
+              Shop sweatshirt
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ORIGIN */}
+      <section id="origin" className="px-6 py-28 md:py-40">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="data-label mb-10 text-mustard">Origin</p>
+          <div className="space-y-8 font-serif text-2xl md:text-3xl text-forest leading-snug">
+            <p>Costa Blanca is where European cycling comes to survive the winter.</p>
+            <p>But the roads belong to someone.</p>
+            <p>col.cc was born here. To turn those climbs into memories worth keeping.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CLIMBS DATA */}
+      <section id="climbs" className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
+        <div className="hairline pt-8 mb-12">
+          <p className="data-label mb-3">Index</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-forest">The Climbs</h2>
+        </div>
+
+        <div className="grid grid-cols-12 gap-4 data-label pb-4 border-b border-limestone">
+          <div className="col-span-12 md:col-span-4">Pass</div>
+          <div className="col-span-4 md:col-span-1 text-right md:text-left">km</div>
+          <div className="col-span-4 md:col-span-1 text-right md:text-left">avg %</div>
+          <div className="col-span-4 md:col-span-2 text-right md:text-left">elevation</div>
+          <div className="hidden md:block md:col-span-4">Note</div>
+        </div>
+
+        {climbs.map((c) => (
+          <div
+            key={c.name}
+            className="grid grid-cols-12 gap-4 py-6 border-b border-limestone items-baseline"
+          >
+            <div className="col-span-12 md:col-span-4 font-serif text-2xl text-forest uppercase tracking-tight">
+              {c.name}
+            </div>
+            <div className="col-span-4 md:col-span-1 data-mono text-sm">{c.km}</div>
+            <div className="col-span-4 md:col-span-1 data-mono text-sm">{c.avg}</div>
+            <div className="col-span-4 md:col-span-2 data-mono text-sm">{c.elev} m</div>
+            <div className="col-span-12 md:col-span-4 text-asphalt italic">{c.copy}</div>
+          </div>
+        ))}
+      </section>
+
+      {/* FOOTER */}
+      <footer className="px-6 md:px-12 lg:px-20 py-16 mt-12">
+        <div className="hairline pt-10 grid grid-cols-2 md:grid-cols-4 gap-8 items-start">
+          <div>
+            <p className="font-serif text-xl text-forest mb-2">col.cc</p>
+            <p className="data-mono text-xs text-asphalt">Born in Costa Blanca</p>
+          </div>
+          <div>
+            <p className="data-label mb-3">Follow</p>
+            <a href="#" className="text-asphalt hover:text-teal transition-colors">Instagram</a>
+          </div>
+          <div>
+            <p className="data-label mb-3">Contact</p>
+            <a href="mailto:hola@col.cc" className="text-asphalt hover:text-teal transition-colors">
+              hola@col.cc
+            </a>
+          </div>
+          <div>
+            <p className="data-label mb-3">Language</p>
+            <div className="flex gap-3 data-mono text-sm">
+              <button className="text-forest border-b border-forest">EN</button>
+              <span className="text-limestone">/</span>
+              <button className="text-asphalt hover:text-forest transition-colors">ES</button>
+            </div>
+          </div>
+        </div>
+        <p className="data-mono text-xs text-asphalt mt-12">
+          © {new Date().getFullYear()} col.cc · The climb, remembered.
+        </p>
+      </footer>
+    </div>
+  );
 }
