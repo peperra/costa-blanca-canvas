@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logoWordmark from "@/assets/logo-wordmark.svg";
 import printCollDeRates from "@/assets/print-coll-de-rates.png";
+import printCumbresDelSol from "@/assets/print-cumbres-del-sol.png";
 import sudaderaColCc from "@/assets/sudadera-col-cc.png";
 import heroCollection from "@/assets/hero-collection.jpg";
 
@@ -51,7 +52,7 @@ const climbs = [
     avg: "9.95",
     elev: "366",
     copy: "Short, sharp, and ending at the sea.",
-    image: null,
+    image: printCumbresDelSol,
     shopUrl: `${SHOPIFY_BASE}/products/cumbres-del-sol`,
   },
 ];
