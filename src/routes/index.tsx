@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import logoWordmark from "@/assets/logo-wordmark.svg";
 import printCollDeRates from "@/assets/print-coll-de-rates.png";
 import sudaderaColCc from "@/assets/sudadera-col-cc.png";
+import heroCollection from "@/assets/hero-collection.jpg";
 
 // TODO: replace with real Shopify product URLs once the store is live
 const SHOPIFY_BASE = "#shopify";
@@ -153,29 +154,42 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="px-6 md:px-12 lg:px-20 pt-12 md:pt-24 pb-24 md:pb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <div className="lg:col-span-7">
-            <p className="data-label mb-8">Drop 01 — Costa Blanca</p>
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-forest leading-[1.02] mb-8">
-              The climb,<br />remembered.
+      <section id="top" className="relative w-full">
+        <div className="relative w-full h-[80vh] min-h-[520px] max-h-[820px] overflow-hidden">
+          <img
+            src={heroCollection}
+            alt="col.cc — sudadera, print enmarcado y gorra sobre estante de piedra"
+            className="absolute inset-0 w-full h-full object-cover"
+            width={1920}
+            height={1080}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-limestone/60 via-limestone/20 to-transparent" />
+          <div className="relative z-10 h-full px-6 md:px-12 lg:px-20 flex flex-col justify-center max-w-6xl">
+            <p className="data-label mb-6 text-forest">Drop 01 — Costa Blanca</p>
+            <h1 className="font-serif text-forest leading-[0.98] tracking-tight text-[12vw] md:text-[8vw] lg:text-[6.5vw] mb-6 max-w-5xl">
+              The climb, remembered.
             </h1>
-            <p className="text-lg md:text-xl text-asphalt max-w-xl mb-10 leading-relaxed">
-              Collector-grade art prints of Spain's iconic mountain passes.
-              Drop 1 · Costa Blanca.
+            <p className="text-base md:text-lg text-asphalt max-w-xl mb-8 leading-relaxed bg-offwhite/70 px-3 py-2 backdrop-blur-sm w-fit">
+              Collector-grade prints &amp; after-cycling wear from Spain's iconic mountain passes.
             </p>
-            <a
-              href="#prints"
-              className="inline-block bg-teal text-offwhite px-8 py-4 data-label hover:bg-forest transition-colors"
-            >
-              Shop the collection
-            </a>
-          </div>
-          <div className="lg:col-span-5">
-            <HeroIllustration />
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="#prints"
+                className="inline-block bg-teal text-offwhite px-7 py-4 data-label hover:bg-forest transition-colors"
+              >
+                Shop the prints
+              </a>
+              <a
+                href="#sweatshirt"
+                className="inline-block bg-offwhite/90 text-forest px-7 py-4 data-label hover:bg-offwhite transition-colors border border-forest/20"
+              >
+                Shop the sweatshirt
+              </a>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* PRINTS */}
       <section id="prints" className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
