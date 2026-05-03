@@ -29,14 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Col.cc" },
+      { name: "description", content: "Costa Blanca Canvas is a one-page website showcasing collector-grade art prints of Spanish mountain passes." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Col.cc" },
+      { property: "og:description", content: "Costa Blanca Canvas is a one-page website showcasing collector-grade art prints of Spanish mountain passes." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Col.cc" },
+      { name: "twitter:description", content: "Costa Blanca Canvas is a one-page website showcasing collector-grade art prints of Spanish mountain passes." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0c68ef44-f0e5-4799-b6e2-a19c1c7b067f/id-preview-5e70b1a7--f8e2b0b9-d7bf-4ac3-9c94-b87f8f08595c.lovable.app-1777834648211.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0c68ef44-f0e5-4799-b6e2-a19c1c7b067f/id-preview-5e70b1a7--f8e2b0b9-d7bf-4ac3-9c94-b87f8f08595c.lovable.app-1777834648211.png" },
     ],
     links: [
       {
