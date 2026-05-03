@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logoWordmark from "@/assets/logo-wordmark.svg";
 import printCollDeRates from "@/assets/print-coll-de-rates.png";
+import sudaderaColCc from "@/assets/sudadera-col-cc.png";
 
 // TODO: replace with real Shopify product URLs once the store is live
 const SHOPIFY_BASE = "#shopify";
@@ -253,8 +254,13 @@ function Index() {
       {/* SWEATSHIRT */}
       <section id="sweatshirt" className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="aspect-square">
-            <SweatshirtIllustration />
+          <div className="aspect-[3/2] bg-limestone overflow-hidden">
+            <img
+              src={sudaderaColCc}
+              alt="After Cycling Sweatshirt — Coll de Rates, frente y espalda"
+              className="w-full h-full object-contain"
+              loading="lazy"
+            />
           </div>
           <div>
             <p className="data-label mb-6">The Sweatshirt</p>
