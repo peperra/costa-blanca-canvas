@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import logoWordmark from "@/assets/logo-wordmark.svg";
 import printCollDeRates from "@/assets/print-coll-de-rates.png";
 import printCumbresDelSol from "@/assets/print-cumbres-del-sol.png";
+import printPuertoDeTudons from "@/assets/print-puerto-de-tudons.jpg";
 import sudaderaColCc from "@/assets/sudadera-col-cc.png";
 import heroCollection from "@/assets/hero-collection.jpg";
 
@@ -43,7 +44,7 @@ const climbs = [
     avg: "5.5",
     elev: "1025",
     copy: "A quiet road between limestone giants.",
-    image: null,
+    image: printPuertoDeTudons,
     shopUrl: `${SHOPIFY_BASE}/products/puerto-de-tudons`,
   },
   {
@@ -205,7 +206,7 @@ function Index() {
         </div>
 
         {/* Small index of the three prints — horizontal, name on top, image below */}
-        <ul className="grid grid-cols-3 gap-4 md:gap-8 mb-20 md:mb-28">
+        <ul className="hidden md:grid grid-cols-3 gap-4 md:gap-8 mb-20 md:mb-28">
           {climbs.map((c, i) => (
             <li key={`idx-${c.name}`} className="flex flex-col">
               <p className="data-mono text-xs text-teal mb-1">1.{i + 1}</p>
