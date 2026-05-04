@@ -218,7 +218,7 @@ function Index() {
                   <img
                     src={c.image}
                     alt={`${c.name} thumbnail`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     loading="lazy"
                   />
                 ) : (
@@ -229,7 +229,7 @@ function Index() {
           ))}
         </ul>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-12">
           {climbs.map((c, i) => (
             <article key={c.name} className="flex flex-col">
               <p className="data-label mb-3">
@@ -247,7 +247,7 @@ function Index() {
                   <img
                     src={c.image}
                     alt={`${c.name} — col.cc art print`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     loading="lazy"
                   />
                 ) : (
