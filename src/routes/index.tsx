@@ -206,7 +206,7 @@ function Index() {
         </div>
 
         {/* Small index of the three prints — horizontal, name on top, image below */}
-        <ul className="hidden md:grid grid-cols-3 gap-4 md:gap-8 mb-20 md:mb-28">
+        <ul className="hidden lg:grid grid-cols-3 gap-4 md:gap-8 mb-20 md:mb-28">
           {climbs.map((c, i) => (
             <li key={`idx-${c.name}`} className="flex flex-col">
               <p className="data-mono text-xs text-teal mb-1">1.{i + 1}</p>
