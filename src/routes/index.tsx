@@ -243,16 +243,15 @@ function Index() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-12">
           {climbs.map((c, i) => (
             <article key={c.name} className="flex flex-col">
-              <p className="data-label mb-3">
-                <span className="text-teal">1.{i + 1}</span> · Print N° 0{i + 1}
-              </p>
               <h3 className="font-serif text-2xl md:text-3xl text-forest mb-3 uppercase tracking-tight">
                 {c.name}
               </h3>
               <p className="data-mono text-xs mb-4">
                 {c.km} · {c.avg} · {c.elev}
               </p>
-              <p className="text-asphalt mb-6 leading-relaxed">{c.copy}</p>
+              <p className="text-asphalt mb-6 leading-relaxed">
+                {c.intro ?? c.copy}
+              </p>
               <div className="aspect-[4/5] mb-6 overflow-hidden bg-limestone/40">
                 {c.image ? (
                   <img
@@ -265,6 +264,11 @@ function Index() {
                   <PrintIllustration variant={i + 1} />
                 )}
               </div>
+              {c.card && (
+                <p className="data-mono text-xs text-asphalt mb-6 leading-relaxed border-l-2 border-teal pl-4">
+                  {c.card}
+                </p>
+              )}
               <a
                 href={c.shopUrl}
                 target="_blank"
