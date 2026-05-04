@@ -31,18 +31,26 @@ export const Route = createFileRoute("/")({
 const climbs = [
   {
     name: "Coll de Rates",
-    km: "6.5",
-    avg: "5.4",
+    km: "6.75",
+    avg: "5.24",
     elev: "626",
+    tagline: "From Parcent to the summit. The best.",
+    intro:
+      "6.75 km from the valley floor at Parcent, climbing through pine and limestone at a consistent 5.24%. No sudden ramps, no tricks. Just a road that rewards patience — and keeps riders coming back every winter.",
+    card: "6.75 km. 626 m. Parcent to the top. The climb that keeps bringing cyclists back.",
     copy: "A steady rhythm through pine and light.",
     image: printCollDeRates,
     shopUrl: `${SHOPIFY_BASE}/products/coll-de-rates`,
   },
   {
     name: "Puerto de Tudons",
-    km: "7.0",
-    avg: "5.5",
-    elev: "1025",
+    km: "20.35",
+    avg: "4.4",
+    elev: "888",
+    tagline: "A long road between limestone giants.",
+    intro:
+      "20.35 km from the coast into the heart of the Sierra de Aitana. The road rises steadily through white villages and dense Mediterranean scrub, past Sella, past the Relleu crossroads, into a series of sweeping hairpins that arrive at Tudons almost without warning. Long, quiet, and completely alone.",
+    card: "20.35 km. 888 m. From the valley to the pass. The climb the coast doesn't know about.",
     copy: "A quiet road between limestone giants.",
     image: printPuertoDeTudons,
     shopUrl: `${SHOPIFY_BASE}/products/puerto-de-tudons`,
@@ -52,6 +60,9 @@ const climbs = [
     km: "3.68",
     avg: "9.95",
     elev: "366",
+    tagline: "Short, sharp, and ending at the sea.",
+    intro: null,
+    card: null,
     copy: "Short, sharp, and ending at the sea.",
     image: printCumbresDelSol,
     shopUrl: `${SHOPIFY_BASE}/products/cumbres-del-sol`,
@@ -232,16 +243,15 @@ function Index() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-12">
           {climbs.map((c, i) => (
             <article key={c.name} className="flex flex-col">
-              <p className="data-label mb-3">
-                <span className="text-teal">1.{i + 1}</span> · Print N° 0{i + 1}
-              </p>
               <h3 className="font-serif text-2xl md:text-3xl text-forest mb-3 uppercase tracking-tight">
                 {c.name}
               </h3>
               <p className="data-mono text-xs mb-4">
                 {c.km} · {c.avg} · {c.elev}
               </p>
-              <p className="text-asphalt mb-6 leading-relaxed">{c.copy}</p>
+              <p className="text-asphalt mb-6 leading-relaxed">
+                {c.intro ?? c.copy}
+              </p>
               <div className="aspect-[4/5] mb-6 overflow-hidden bg-limestone/40">
                 {c.image ? (
                   <img
@@ -254,6 +264,11 @@ function Index() {
                   <PrintIllustration variant={i + 1} />
                 )}
               </div>
+              {c.card && (
+                <p className="data-mono text-xs text-asphalt mb-6 leading-relaxed border-l-2 border-teal pl-4">
+                  {c.card}
+                </p>
+              )}
               <a
                 href={c.shopUrl}
                 target="_blank"
