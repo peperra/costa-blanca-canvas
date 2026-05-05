@@ -178,13 +178,10 @@ function Index() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-limestone/60 via-limestone/20 to-transparent" />
           <div className="relative z-10 h-full px-6 md:px-12 lg:px-20 flex flex-col justify-center max-w-6xl">
-            <p className="data-label mb-6 text-forest">Drop 01 — Costa Blanca</p>
             <h1 className="font-serif text-forest leading-[0.98] tracking-tight text-[12vw] md:text-[8vw] lg:text-[6.5vw] mb-6 max-w-5xl">
               The climb, remembered.
             </h1>
-            <p className="text-base md:text-lg text-asphalt max-w-xl mb-8 leading-relaxed bg-offwhite/70 px-3 py-2 backdrop-blur-sm w-fit">
-              Collector-grade prints &amp; after-cycling wear from Spain's iconic mountain passes.
-            </p>
+            <p className="data-label mb-8 text-forest">Drop 01 — Costa Blanca</p>
             <div className="flex flex-wrap gap-3">
               <a
                 href="#prints"
