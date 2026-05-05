@@ -244,9 +244,6 @@ function Index() {
               <h3 className="font-serif text-2xl md:text-3xl text-forest mb-3 uppercase tracking-tight">
                 {c.name}
               </h3>
-              <p className="data-mono text-xs mb-4">
-                {c.km} · {c.avg} · {c.elev}
-              </p>
               <p className="text-asphalt mb-6 leading-relaxed">
                 {c.intro ?? c.copy}
               </p>
