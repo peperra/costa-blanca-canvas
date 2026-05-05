@@ -194,7 +194,7 @@ function Index() {
               </a>
               <a
                 href="#sweatshirt"
-                className="inline-block bg-offwhite/90 text-forest px-7 py-4 data-label hover:bg-offwhite transition-colors border border-forest/20"
+                className="inline-block bg-teal text-offwhite px-7 py-4 data-label hover:bg-forest transition-colors"
               >
                 Shop the sweatshirt
               </a>
