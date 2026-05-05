@@ -293,7 +293,7 @@ function Index() {
               loading="lazy"
             />
           </div>
-          <div>
+          <div className="lg:order-1">
             <p className="data-label mb-6">The Sweatshirt</p>
             <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">
               After Cycling Sweatshirt<br />
