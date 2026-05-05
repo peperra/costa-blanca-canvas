@@ -244,6 +244,11 @@ function Index() {
               <h3 className="font-serif text-2xl md:text-3xl text-forest mb-3 uppercase tracking-tight">
                 {c.name}
               </h3>
+              {c.tagline && (
+                <p className="font-serif italic text-base md:text-lg text-teal mb-4 leading-snug">
+                  {c.tagline}
+                </p>
+              )}
               <p className="text-asphalt mb-6 leading-relaxed">
                 {c.intro ?? c.copy}
               </p>
