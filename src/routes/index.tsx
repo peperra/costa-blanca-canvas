@@ -285,7 +285,7 @@ function Index() {
       {/* SWEATSHIRT */}
       <section id="sweatshirt" className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="aspect-[3/2] bg-limestone overflow-hidden">
+          <div className="aspect-[3/2] bg-limestone overflow-hidden order-last lg:order-2">
             <img
               src={sudaderaColCc}
               alt="After Cycling Sweatshirt — Coll de Rates, frente y espalda"
@@ -293,7 +293,7 @@ function Index() {
               loading="lazy"
             />
           </div>
-          <div>
+          <div className="lg:order-1">
             <p className="data-label mb-6">The Sweatshirt</p>
             <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">
               After Cycling Sweatshirt<br />
