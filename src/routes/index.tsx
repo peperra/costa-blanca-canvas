@@ -22,7 +22,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "col.cc — The climb, remembered." },
       {
         property: "og:description",
-        content: "Collector-grade art prints of Spain's iconic mountain passes.",
+        content:
+          "Collector-grade art prints of Spain's iconic mountain passes.",
       },
     ],
   }),
@@ -72,40 +73,6 @@ const climbs = [
 
 const SWEATSHIRT_SHOP_URL = `${SHOPIFY_BASE}/products/after-cycling-sweatshirt-coll-de-rates`;
 
-function HeroIllustration() {
-  return (
-    <svg
-      viewBox="0 0 600 500"
-      className="w-full h-auto"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      {/* Sun */}
-      <circle cx="430" cy="140" r="60" fill="var(--mustard)" />
-      {/* Distant mountain */}
-      <path d="M0 360 L120 220 L230 320 L340 200 L470 340 L600 240 L600 500 L0 500 Z" fill="var(--teal)" opacity="0.35" />
-      {/* Front mountain */}
-      <path d="M0 420 L100 300 L200 380 L310 260 L420 380 L520 320 L600 380 L600 500 L0 500 Z" fill="var(--teal)" />
-      {/* Road */}
-      <path
-        d="M40 500 C 200 460, 220 420, 320 410 S 480 380, 560 360"
-        stroke="var(--offwhite)"
-        strokeWidth="3"
-        strokeDasharray="8 10"
-        fill="none"
-      />
-      {/* Cyclist silhouette */}
-      <g transform="translate(260 388)">
-        <circle cx="0" cy="-22" r="6" fill="var(--forest)" />
-        <path d="M-10 0 L0 -16 L12 -2" stroke="var(--forest)" strokeWidth="3" fill="none" strokeLinecap="round" />
-        <circle cx="-12" cy="6" r="9" stroke="var(--forest)" strokeWidth="2.5" fill="none" />
-        <circle cx="14" cy="6" r="9" stroke="var(--forest)" strokeWidth="2.5" fill="none" />
-      </g>
-    </svg>
-  );
-}
-
 function PrintIllustration({ variant }: { variant: number }) {
   const peaks = [
     "M0 220 L80 80 L150 160 L240 60 L320 180 L400 120 L400 260 L0 260 Z",
@@ -117,36 +84,7 @@ function PrintIllustration({ variant }: { variant: number }) {
       <rect width="400" height="260" fill="var(--teal)" />
       <circle cx={variant === 1 ? 310 : variant === 2 ? 90 : 260} cy="70" r="22" fill="var(--mustard)" />
       <path d={peaks[variant - 1]} fill="var(--forest)" opacity="0.55" />
-      <path
-        d={peaks[variant - 1].replace("220", "240").replace("80", "120")}
-        fill="var(--forest)"
-      />
-    </svg>
-  );
-}
-
-function SweatshirtIllustration() {
-  return (
-    <svg viewBox="0 0 500 500" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
-      <rect width="500" height="500" fill="var(--limestone)" />
-      {/* Sweatshirt silhouette */}
-      <path
-        d="M150 140 L110 180 L80 280 L120 300 L140 250 L140 420 L360 420 L360 250 L380 300 L420 280 L390 180 L350 140 L300 130 Q250 165 200 130 Z"
-        fill="var(--offwhite)"
-      />
-      {/* Neckline */}
-      <path d="M210 140 Q250 170 290 140" stroke="var(--limestone)" strokeWidth="3" fill="none" />
-      {/* Chest wordmark */}
-      <text
-        x="250"
-        y="240"
-        textAnchor="middle"
-        fontFamily="DM Serif Display, serif"
-        fontSize="22"
-        fill="var(--forest)"
-      >
-        col.cc
-      </text>
+      <path d={peaks[variant - 1].replace("220", "240").replace("80", "120")} fill="var(--forest)" />
     </svg>
   );
 }
@@ -201,7 +139,6 @@ function Index() {
         </div>
       </section>
 
-
       {/* PRINTS */}
       <section id="prints" className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
         <div className="flex items-end justify-between mb-16 hairline pt-8">
@@ -214,30 +151,6 @@ function Index() {
           <p className="data-mono text-sm hidden md:block">03 / 03</p>
         </div>
 
-        {/* Small index of the three prints — horizontal, name on top, image below */}
-        <ul className="hidden lg:grid grid-cols-3 gap-4 md:gap-8 mb-20 md:mb-28">
-          {climbs.map((c, i) => (
-            <li key={`idx-${c.name}`} className="flex flex-col">
-              <p className="data-mono text-xs text-teal mb-1">1.{i + 1}</p>
-              <p className="font-serif text-sm md:text-base text-forest uppercase tracking-tight mb-3 leading-tight">
-                {c.name}
-              </p>
-              <div className="aspect-[4/5] overflow-hidden bg-limestone/40">
-                {c.image ? (
-                  <img
-                    src={c.image}
-                    alt={`${c.name} thumbnail`}
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                  />
-                ) : (
-                  <PrintIllustration variant={i + 1} />
-                )}
-              </div>
-            </li>
-          ))}
-        </ul>
-
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-12">
           {climbs.map((c, i) => (
             <article key={c.name} className="flex flex-col">
@@ -249,9 +162,7 @@ function Index() {
                   {c.tagline}
                 </p>
               )}
-              <p className="text-asphalt mb-6 leading-relaxed">
-                {c.intro ?? c.copy}
-              </p>
+              <p className="text-asphalt mb-6 leading-relaxed">{c.intro ?? c.copy}</p>
               <div className="aspect-[4/5] mb-6 overflow-hidden bg-limestone/40">
                 {c.image ? (
                   <img
@@ -300,8 +211,8 @@ function Index() {
               <span className="text-asphalt">— Coll de Rates</span>
             </h2>
             <p className="text-lg text-asphalt leading-relaxed mb-8 max-w-md">
-              No hood. Sand. col.cc on the chest. The profile of Coll de Rates on the back.
-              For arriving at the café, not for climbing the pass.
+              No hood. Sand. col.cc on the chest. The profile of Coll de Rates on the back. For
+              arriving at the café, not for climbing the pass.
             </p>
             <div className="flex items-center gap-6 mb-10 hairline pt-6">
               <span className="data-label">Back print</span>
@@ -337,7 +248,6 @@ function Index() {
           <p className="data-label mb-3">Index</p>
           <h2 className="font-serif text-4xl md:text-5xl text-forest">The Climbs</h2>
         </div>
-
         <div className="grid grid-cols-12 gap-4 data-label pb-4 border-b border-limestone">
           <div className="col-span-12 md:col-span-4">Pass</div>
           <div className="col-span-4 md:col-span-1 text-right md:text-left">km</div>
@@ -345,7 +255,6 @@ function Index() {
           <div className="col-span-4 md:col-span-2 text-right md:text-left">elevation</div>
           <div className="hidden md:block md:col-span-4">Note</div>
         </div>
-
         {climbs.map((c) => (
           <div
             key={c.name}
