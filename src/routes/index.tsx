@@ -73,6 +73,22 @@ const climbs = [
 
 const SWEATSHIRT_SHOP_URL = `${SHOPIFY_BASE}/products/after-cycling-sweatshirt-coll-de-rates`;
 
+const cyclistPledges = [
+  "We greet. A wave to the farmer. A nod at the bar. A buenos días that means it.",
+  "We stop. For the school bus. For the tractor. For the old man walking his dog on the narrow road.",
+  "We support. Every café stop, every village shop. That's how this place stays alive.",
+  "We carry out. Every gel wrapper. Every bottle. Everything we brought in, we take back out.",
+  "We try. A word in Spanish. A gràcies in Valencian. Enough to show we know where we are.",
+  "We remember. This is someone's home. Not our training camp. Not our playground.",
+];
+
+const localPledges = [
+  "We wave back. Even when there are twenty of them.",
+  "We slow down. When we pass them on the road.",
+  "We give space. One and a half metres. No closer.",
+  "We know they chose here. Of all the places in the world.",
+];
+
 function PrintIllustration({ variant }: { variant: number }) {
   const peaks = [
     "M0 220 L80 80 L150 160 L240 60 L320 180 L400 120 L400 260 L0 260 Z",
@@ -101,7 +117,7 @@ function Index() {
           <a href="#prints" className="hover:text-teal transition-colors">Prints</a>
           <a href="#sweatshirt" className="hover:text-teal transition-colors">Sweatshirt</a>
           <a href="#origin" className="hover:text-teal transition-colors">Origin</a>
-          <a href="#climbs" className="hover:text-teal transition-colors">Climbs</a>
+          <a href="#manifesto" className="hover:text-teal transition-colors">Manifesto</a>
         </nav>
       </header>
 
@@ -242,33 +258,58 @@ function Index() {
         </div>
       </section>
 
-      {/* CLIMBS DATA */}
-      <section id="climbs" className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
-        <div className="hairline pt-8 mb-12">
-          <p className="data-label mb-3">Index</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-forest">The Climbs</h2>
-        </div>
-        <div className="grid grid-cols-12 gap-4 data-label pb-4 border-b border-limestone">
-          <div className="col-span-12 md:col-span-4">Pass</div>
-          <div className="col-span-4 md:col-span-1 text-right md:text-left">km</div>
-          <div className="col-span-4 md:col-span-1 text-right md:text-left">avg %</div>
-          <div className="col-span-4 md:col-span-2 text-right md:text-left">elevation</div>
-          <div className="hidden md:block md:col-span-4">Note</div>
-        </div>
-        {climbs.map((c) => (
-          <div
-            key={c.name}
-            className="grid grid-cols-12 gap-4 py-6 border-b border-limestone items-baseline"
-          >
-            <div className="col-span-12 md:col-span-4 font-serif text-2xl text-forest uppercase tracking-tight">
-              {c.name}
-            </div>
-            <div className="col-span-4 md:col-span-1 data-mono text-sm">{c.km}</div>
-            <div className="col-span-4 md:col-span-1 data-mono text-sm">{c.avg}</div>
-            <div className="col-span-4 md:col-span-2 data-mono text-sm">{c.elev} m</div>
-            <div className="col-span-12 md:col-span-4 text-asphalt italic">{c.copy}</div>
+      {/* MANIFESTO */}
+      <section id="manifesto" className="px-6 md:px-12 lg:px-20 py-20 md:py-28 bg-forest text-offwhite">
+        <div className="max-w-3xl mx-auto">
+          <div className="hairline pt-8 mb-16 border-offwhite/20">
+            <p className="data-label mb-3 text-mustard">Manifesto</p>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+              Cyclist, come here.
+            </h2>
           </div>
-        ))}
+
+          <p className="font-serif italic text-lg md:text-xl text-offwhite/70 mb-16 leading-relaxed">
+            We've all seen it. "Cyclist Go Home." Painted on a wall, somewhere on a climb you love.
+            We understand why it's there. This is our answer — and our ask.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
+            <div>
+              <p className="data-label mb-8 text-mustard">For the cyclist</p>
+              <ul className="space-y-6">
+                {cyclistPledges.map((pledge, i) => (
+                  <li key={i} className="flex gap-4">
+                    <span className="data-mono text-xs text-offwhite/30 mt-1 shrink-0">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="text-offwhite/80 leading-relaxed">{pledge}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="data-label mb-8 text-mustard">For the local</p>
+              <ul className="space-y-6">
+                {localPledges.map((pledge, i) => (
+                  <li key={i} className="flex gap-4">
+                    <span className="data-mono text-xs text-offwhite/30 mt-1 shrink-0">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="text-offwhite/80 leading-relaxed">{pledge}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-20 pt-10 border-t border-offwhite/20">
+            <p className="font-serif text-2xl md:text-3xl text-offwhite mb-2">
+              Cyclist, come here.
+            </p>
+            <p className="data-mono text-sm text-mustard">col.cc</p>
+          </div>
+        </div>
       </section>
 
       {/* FOOTER */}
