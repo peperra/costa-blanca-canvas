@@ -192,14 +192,16 @@ function Index() {
               <p className="data-mono text-xs text-asphalt mb-6 leading-relaxed border-l-2 border-teal pl-4">
                 {c.card}
               </p>
-              <a
-                href={c.shopUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-teal text-offwhite px-6 py-3 data-label hover:bg-forest transition-colors justify-self-center"
-              >
-                Buy print
-              </a>
+              <div className="text-center">
+                <a
+                  href={c.shopUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-teal text-offwhite px-5 py-2 text-xs data-label hover:bg-forest transition-colors"
+                >
+                  Buy print
+                </a>
+              </div>
             </article>
           ))}
         </div>
@@ -231,7 +233,7 @@ function Index() {
                 href={SWEATSHIRT_SHOP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-teal text-offwhite px-6 py-3 data-label hover:bg-forest transition-colors"
+                className="inline-block bg-teal text-offwhite px-5 py-2 text-xs data-label hover:bg-forest transition-colors"
               >
                 Shop sweatshirt
               </a>
