@@ -271,7 +271,7 @@ function Index() {
           </div>
 
           <p className="font-serif italic text-lg md:text-xl text-offwhite/70 mb-16 leading-relaxed">
-            We've all seen it. "Cyclist Go Home." Painted on a wall, somewhere on a climb you love.
+            We've all seen it. Cyclist Go Home. Painted on a wall, somewhere on a climb you love.
             We understand why it's there. This is our answer — and our ask.
           </p>
 
