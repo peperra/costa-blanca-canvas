@@ -167,19 +167,17 @@ function Index() {
           <p className="data-mono text-sm hidden md:block">03 / 03</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-12 lg:grid-rows-[auto_auto_auto_auto_auto_auto]">
           {climbs.map((c, i) => (
-            <article key={c.name} className="flex flex-col h-full">
+            <article key={c.name} className="flex flex-col lg:grid lg:row-span-6 lg:grid-rows-subgrid gap-0">
               <h3 className="font-serif text-2xl md:text-3xl text-forest mb-3 uppercase tracking-tight">
                 {c.name}
               </h3>
-              {c.tagline && (
-                <p className="font-serif italic text-base md:text-lg text-teal mb-4 leading-snug min-h-[3.5rem]">
-                  {c.tagline}
-                </p>
-              )}
+              <p className="font-serif italic text-base md:text-lg text-teal mb-4 leading-snug">
+                {c.tagline}
+              </p>
               <p className="text-asphalt mb-6 leading-relaxed">{c.intro ?? c.copy}</p>
-              <div className="aspect-[4/5] mb-6 overflow-hidden bg-limestone/40 mt-auto">
+              <div className="aspect-[4/5] mb-6 overflow-hidden bg-limestone/40">
                 {c.image ? (
                   <img
                     src={c.image}
@@ -191,11 +189,9 @@ function Index() {
                   <PrintIllustration variant={i + 1} />
                 )}
               </div>
-              {c.card && (
-                <p className="data-mono text-xs text-asphalt mb-6 leading-relaxed border-l-2 border-teal pl-4">
-                  {c.card}
-                </p>
-              )}
+              <p className="data-mono text-xs text-asphalt mb-6 leading-relaxed border-l-2 border-teal pl-4">
+                {c.card}
+              </p>
               <a
                 href={c.shopUrl}
                 target="_blank"
