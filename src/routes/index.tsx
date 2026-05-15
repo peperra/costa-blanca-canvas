@@ -196,7 +196,7 @@ function Index() {
                 href={c.shopUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-teal text-offwhite px-8 py-4 data-label hover:bg-forest transition-colors self-start"
+                className="inline-block bg-teal text-offwhite px-6 py-3 data-label hover:bg-forest transition-colors justify-self-center"
               >
                 Buy print
               </a>
