@@ -306,10 +306,9 @@ function Index() {
           </div>
 
           <div className="mt-20 pt-10 border-t border-offwhite/20">
-            <p className="font-serif text-2xl md:text-3xl text-offwhite mb-2">
-              Cyclist, come here.
+            <p className="font-serif text-2xl md:text-3xl text-offwhite">
+              Cyclist, come here. col.cc.
             </p>
-            <p className="data-mono text-sm text-mustard">col.cc</p>
           </div>
         </div>
       </section>
