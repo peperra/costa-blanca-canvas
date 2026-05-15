@@ -167,19 +167,19 @@ function Index() {
           <p className="data-mono text-sm hidden md:block">03 / 03</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-12 items-stretch">
           {climbs.map((c, i) => (
-            <article key={c.name} className="flex flex-col">
+            <article key={c.name} className="flex flex-col h-full">
               <h3 className="font-serif text-2xl md:text-3xl text-forest mb-3 uppercase tracking-tight">
                 {c.name}
               </h3>
               {c.tagline && (
-                <p className="font-serif italic text-base md:text-lg text-teal mb-4 leading-snug">
+                <p className="font-serif italic text-base md:text-lg text-teal mb-4 leading-snug min-h-[3.5rem]">
                   {c.tagline}
                 </p>
               )}
               <p className="text-asphalt mb-6 leading-relaxed">{c.intro ?? c.copy}</p>
-              <div className="aspect-[4/5] mb-6 overflow-hidden bg-limestone/40">
+              <div className="aspect-[4/5] mb-6 overflow-hidden bg-limestone/40 mt-auto">
                 {c.image ? (
                   <img
                     src={c.image}
@@ -200,9 +200,9 @@ function Index() {
                 href={c.shopUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="data-label text-teal border-b border-teal pb-1 self-start hover:text-forest hover:border-forest transition-colors"
+                className="inline-block bg-teal text-offwhite px-8 py-4 data-label hover:bg-forest transition-colors self-start"
               >
-                Buy print →
+                Buy print
               </a>
             </article>
           ))}
