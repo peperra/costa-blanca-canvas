@@ -226,18 +226,16 @@ function Index() {
               No hood. Sand. col.cc on the chest. The profile of Coll de Rates on the back. For
               arriving at the café, not for climbing the pass.
             </p>
-            <div className="flex items-center gap-6 mb-10 hairline pt-6">
-              <span className="data-label">Back print</span>
-              <span className="data-mono text-sm">6.5 · 5.4 · 626</span>
+            <div className="text-center">
+              <a
+                href={SWEATSHIRT_SHOP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-teal text-offwhite px-6 py-3 data-label hover:bg-forest transition-colors"
+              >
+                Shop sweatshirt
+              </a>
             </div>
-            <a
-              href={SWEATSHIRT_SHOP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-teal text-offwhite px-8 py-4 data-label hover:bg-forest transition-colors"
-            >
-              Shop sweatshirt
-            </a>
           </div>
         </div>
       </section>
