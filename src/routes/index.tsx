@@ -252,8 +252,10 @@ function Index() {
           <p className="data-label mb-10 text-mustard">Origin</p>
           <div className="space-y-8 font-serif text-2xl md:text-3xl text-forest leading-snug">
             <p>Costa Blanca is where European cycling comes to survive the winter.</p>
-            <p>But the roads belong to someone.</p>
-            <p>col.cc was born here. To turn those climbs into memories worth keeping.</p>
+            <p>The light is different here. The roads climb differently. And the silence at the top of a col — that's different too.</p>
+            <p>But these roads belong to someone. To the farmer on the tractor at 7am. To the woman walking to the market in Alcalalí. To the kid on the school bus on the narrow road above Jalón. They were here before the pelotons arrived. They'll be here long after.</p>
+            <p>col.cc was born here. Not to claim this place — but to honour it. To turn those climbs into memories worth keeping. And to make sure the people who live here are glad we came.</p>
+            <p>But every climb has a community. Every road belongs to someone.</p>
           </div>
         </div>
       </section>
