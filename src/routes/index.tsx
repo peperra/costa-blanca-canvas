@@ -233,7 +233,7 @@ function Index() {
                 href={SWEATSHIRT_SHOP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-teal text-offwhite px-6 py-3 data-label hover:bg-forest transition-colors"
+                className="inline-block bg-teal text-offwhite px-5 py-2 text-xs data-label hover:bg-forest transition-colors"
               >
                 Shop sweatshirt
               </a>
