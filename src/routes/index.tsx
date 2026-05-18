@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { createCheckoutSession } from "@/server/stripe";
 import logoWordmark from "@/assets/logo-wordmark.svg";
 import printCollDeRates from "@/assets/print-coll-de-rates.png";
 import printCumbresDelSol from "@/assets/print-cumbres-del-sol.png";
@@ -111,7 +110,12 @@ function Index() {
   async function handleBuy(productId: string) {
     setLoadingId(productId);
     try {
-      const { url } = await createCheckoutSession({ data: { productId } });
+      const res = await fetch("/api/create-checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ productId }),
+      });
+      const { url } = await res.json();
       window.location.href = url;
     } catch (err) {
       console.error("Checkout error:", err);
