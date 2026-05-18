@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { createCheckoutSession } from "@/server/stripe";
 import logoWordmark from "@/assets/logo-wordmark.svg";
 import printCollDeRates from "@/assets/print-coll-de-rates.png";
 import printCumbresDelSol from "@/assets/print-cumbres-del-sol.png";
@@ -6,8 +8,6 @@ import printPuertoDeTudons from "@/assets/print-puerto-de-tudons.jpg";
 import sudaderaColCc from "@/assets/sudadera-col-cc.png";
 import heroCollection from "@/assets/hero-collection.jpg";
 
-// TODO: replace with real Shopify product URLs once the store is live
-const SHOPIFY_BASE = "#shopify";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -41,7 +41,7 @@ const climbs = [
     card: "6.75 km. 626 m. Parcent to the top. The climb that keeps bringing cyclists back.",
     copy: "A steady rhythm through pine and light.",
     image: printCollDeRates,
-    shopUrl: `${SHOPIFY_BASE}/products/coll-de-rates`,
+    productId: "coll-de-rates",
   },
   {
     name: "Puerto de Tudons",
@@ -54,7 +54,7 @@ const climbs = [
     card: "20.35 km. 888 m. From the valley to the pass. The climb the coast doesn't know about.",
     copy: "A quiet road between limestone giants.",
     image: printPuertoDeTudons,
-    shopUrl: `${SHOPIFY_BASE}/products/puerto-de-tudons`,
+    productId: "puerto-de-tudons",
   },
   {
     name: "Cumbre del Sol",
@@ -67,11 +67,11 @@ const climbs = [
     card: "6.28 km. 378 m. Benitatxell to the antennae. Everything hurts. Then you see the sea.",
     copy: "Short. Savage. The sea at the top.",
     image: printCumbresDelSol,
-    shopUrl: `${SHOPIFY_BASE}/products/cumbres-del-sol`,
+    productId: "cumbres-del-sol",
   },
 ];
 
-const SWEATSHIRT_SHOP_URL = `${SHOPIFY_BASE}/products/after-cycling-sweatshirt-coll-de-rates`;
+
 
 const cyclistPledges = [
   "We greet. A wave to the farmer. A nod at the bar. A buenos días that means it.",
@@ -106,6 +106,19 @@ function PrintIllustration({ variant }: { variant: number }) {
 }
 
 function Index() {
+  const [loadingId, setLoadingId] = useState<string | null>(null);
+
+  async function handleBuy(productId: string) {
+    setLoadingId(productId);
+    try {
+      const { url } = await createCheckoutSession({ data: { productId } });
+      window.location.href = url;
+    } catch (err) {
+      console.error("Checkout error:", err);
+      setLoadingId(null);
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background">
       {/* Nav */}
@@ -193,14 +206,13 @@ function Index() {
                 {c.card}
               </p>
               <div className="text-center">
-                <a
-                  href={c.shopUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-teal text-offwhite px-5 py-2 text-xs data-label hover:bg-forest transition-colors"
+                <button
+                  onClick={() => handleBuy(c.productId)}
+                  disabled={loadingId === c.productId}
+                  className="inline-block bg-teal text-offwhite px-5 py-2 text-xs data-label hover:bg-forest transition-colors disabled:opacity-60 disabled:cursor-wait"
                 >
-                  Buy print
-                </a>
+                  {loadingId === c.productId ? "Redirecting…" : "Buy print"}
+                </button>
               </div>
             </article>
           ))}
@@ -229,14 +241,13 @@ function Index() {
               arriving at the café, not for climbing the pass.
             </p>
             <div className="text-center">
-              <a
-                href={SWEATSHIRT_SHOP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-teal text-offwhite px-5 py-2 text-xs data-label hover:bg-forest transition-colors"
+              <button
+                onClick={() => handleBuy("sweatshirt")}
+                disabled={loadingId === "sweatshirt"}
+                className="inline-block bg-teal text-offwhite px-5 py-2 text-xs data-label hover:bg-forest transition-colors disabled:opacity-60 disabled:cursor-wait"
               >
-                Shop sweatshirt
-              </a>
+                {loadingId === "sweatshirt" ? "Redirecting…" : "Shop sweatshirt"}
+              </button>
             </div>
           </div>
         </div>
