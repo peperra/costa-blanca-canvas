@@ -235,8 +235,8 @@ function Index() {
           <p className="data-mono text-sm hidden md:block">01 / 01</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <div className="lg:col-span-7 aspect-[3/2] bg-limestone/40 overflow-hidden order-last lg:order-2">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-start">
+          <div className="lg:col-span-7 lg:col-start-6 aspect-[3/2] bg-limestone/40 overflow-hidden order-last lg:order-2 lg:row-start-1">
             <img
               src={sudaderaColCc}
               alt="After Cycling Sweatshirt — Coll de Rates, frente y espalda"
@@ -244,7 +244,7 @@ function Index() {
               loading="lazy"
             />
           </div>
-          <div className="lg:col-span-5 lg:order-1">
+          <div className="lg:col-span-4 lg:col-start-1 lg:order-1 lg:row-start-1 lg:pt-8">
             <h3 className="font-serif text-3xl md:text-4xl text-forest mb-4 uppercase tracking-tight leading-tight">
               After Cycling Sweatshirt
             </h3>
