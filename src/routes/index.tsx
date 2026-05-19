@@ -225,8 +225,18 @@ function Index() {
 
       {/* SWEATSHIRT */}
       <section id="sweatshirt" className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="aspect-[3/2] bg-limestone overflow-hidden order-last lg:order-2">
+        <div className="flex items-end justify-between mb-16 hairline pt-8">
+          <div>
+            <p className="data-label mb-3">The Sweatshirt</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-forest">
+              Drop 1 · After Cycling
+            </h2>
+          </div>
+          <p className="data-mono text-sm hidden md:block">01 / 01</p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-7 aspect-[3/2] bg-limestone/40 overflow-hidden order-last lg:order-2">
             <img
               src={sudaderaColCc}
               alt="After Cycling Sweatshirt — Coll de Rates, frente y espalda"
@@ -234,17 +244,33 @@ function Index() {
               loading="lazy"
             />
           </div>
-          <div className="lg:order-1">
-            <p className="data-label mb-6">The Sweatshirt</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">
-              After Cycling Sweatshirt<br />
-              <span className="text-asphalt">— Coll de Rates</span>
-            </h2>
-            <p className="text-lg text-asphalt leading-relaxed mb-8 max-w-md">
-              No hood. Sand. col.cc on the chest. The profile of Coll de Rates on the back. For
-              arriving at the café, not for climbing the pass.
+          <div className="lg:col-span-5 lg:order-1">
+            <h3 className="font-serif text-3xl md:text-4xl text-forest mb-4 uppercase tracking-tight leading-tight">
+              After Cycling Sweatshirt
+            </h3>
+            <p className="font-serif italic text-base md:text-lg text-teal mb-5 leading-snug">
+              For arriving at the café, not for climbing the pass.
             </p>
-            <div className="text-center">
+            <p className="text-asphalt mb-8 leading-relaxed max-w-md">
+              No hood. Sand cotton. col.cc on the chest. The profile of Coll de Rates on the back.
+            </p>
+
+            <dl className="grid grid-cols-2 gap-y-3 gap-x-6 mb-8 max-w-sm border-t border-asphalt/15 pt-5">
+              <dt className="data-label text-asphalt/70">Fabric</dt>
+              <dd className="data-mono text-xs text-forest">400 gsm · organic</dd>
+              <dt className="data-label text-asphalt/70">Fit</dt>
+              <dd className="data-mono text-xs text-forest">Boxy · unisex</dd>
+              <dt className="data-label text-asphalt/70">Print</dt>
+              <dd className="data-mono text-xs text-forest">Embroidered</dd>
+              <dt className="data-label text-asphalt/70">Made in</dt>
+              <dd className="data-mono text-xs text-forest">Portugal</dd>
+            </dl>
+
+            <p className="data-mono text-xs text-asphalt mb-6 leading-relaxed border-l-2 border-teal pl-4 max-w-md">
+              6.75 km · 626 m · Coll de Rates. The climb on the back. The café on the chest.
+            </p>
+
+            <div className="text-center lg:text-left">
               <button
                 onClick={() => handleBuy("sweatshirt")}
                 disabled={loadingId === "sweatshirt"}
@@ -258,15 +284,20 @@ function Index() {
       </section>
 
       {/* ORIGIN */}
-      <section id="origin" className="px-6 py-28 md:py-40">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="data-label mb-10 text-mustard">Origin</p>
-          <div className="space-y-8 font-serif text-2xl md:text-3xl text-forest leading-snug">
+      <section id="origin" className="px-6 md:px-12 lg:px-20 py-28 md:py-40 bg-limestone/30">
+        <div className="max-w-3xl mx-auto">
+          <div className="hairline pt-8 mb-16 text-center">
+            <p className="data-label mb-3 text-mustard">Origin</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-forest">
+              Born on these roads.
+            </h2>
+          </div>
+          <div className="space-y-8 font-serif text-xl md:text-2xl text-forest leading-snug text-center">
             <p>Costa Blanca is where European cycling comes to survive the winter.</p>
             <p>The light is different here. The roads climb differently. And the silence at the top of a col — that's different too.</p>
             <p>But these roads belong to someone. To the farmer on the tractor at 7am. To the woman walking to the market in Alcalalí. To the kid on the school bus on the narrow road above Jalón. They were here before the pelotons arrived. They'll be here long after.</p>
             <p>col.cc was born here. Not to claim this place — but to honour it. To turn those climbs into memories worth keeping. And to make sure the people who live here are glad we came.</p>
-            <p>But every climb has a community. Every road belongs to someone.</p>
+            <p className="font-serif italic text-teal">Every climb has a community. Every road belongs to someone.</p>
           </div>
         </div>
       </section>
