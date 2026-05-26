@@ -194,12 +194,12 @@ function Index() {
                 {c.tagline}
               </p>
               <p className="text-asphalt mb-6 leading-relaxed">{c.intro ?? c.copy}</p>
-              <div className="mb-6">
+              <div className="mb-6 bg-white shadow-[0_4px_28px_rgba(0,0,0,0.13)]">
                 {c.image ? (
                   <img
                     src={c.image}
                     alt={`${c.name} — col.cc art print`}
-                    className="w-full h-auto block shadow-[0_4px_24px_rgba(0,0,0,0.12)]"
+                    className="w-full h-auto block"
                     loading="lazy"
                   />
                 ) : (
