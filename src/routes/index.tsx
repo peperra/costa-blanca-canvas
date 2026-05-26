@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import logoWordmark from "@/assets/logo-wordmark.svg";
-import printCollDeRates from "@/assets/print-coll-de-rates.png";
-import printCumbresDelSol from "@/assets/print-cumbres-del-sol.png";
-import printPuertoDeTudons from "@/assets/print-puerto-de-tudons.jpg";
+import printCollDeRates from "@/assets/print-coll-de-rates-2.png";
+import printCumbresDelSol from "@/assets/print-cumbres-del-sol-2.png";
+import printPuertoDeTudons from "@/assets/print-puerto-de-tudons-2.png";
 import sudaderaColCc from "@/assets/sudadera-col-cc.png";
 import heroCollection from "@/assets/hero-collection.jpg";
 
