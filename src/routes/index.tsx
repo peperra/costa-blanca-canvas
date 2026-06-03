@@ -1,9 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import logoWordmark from "@/assets/logo-wordmark.svg";
-import printCollDeRates from "@/assets/print-coll-de-rates-2.png";
-import printCumbresDelSol from "@/assets/print-cumbres-del-sol-2.png";
-import printPuertoDeTudons from "@/assets/print-puerto-de-tudons-2.png";
+import printCollDeRates from "@/assets/print-coll-de-rates-web.jpg";
+import printCumbresDelSol from "@/assets/print-cumbres-del-sol-web.jpg";
+import printPuertoDeTudons from "@/assets/print-puerto-de-tudons-web.jpg";
 import sudaderaColCc from "@/assets/sudadera-col-cc.png";
 import heroCollection from "@/assets/hero-collection.jpg";
 
@@ -194,22 +194,33 @@ function Index() {
                 {c.tagline}
               </p>
               <p className="text-asphalt mb-6 leading-relaxed">{c.intro ?? c.copy}</p>
-              <div className="mb-6 bg-white shadow-[0_4px_28px_rgba(0,0,0,0.13)]">
+              <Link
+                to="/poster/$productId"
+                params={{ productId: c.productId }}
+                className="mb-6 bg-white shadow-[0_4px_28px_rgba(0,0,0,0.13)] block group"
+              >
                 {c.image ? (
                   <img
                     src={c.image}
                     alt={`${c.name} — col.cc art print`}
-                    className="w-full h-auto block"
+                    className="w-full h-auto block group-hover:opacity-90 transition-opacity"
                     loading="lazy"
                   />
                 ) : (
                   <div className="aspect-[4/5]"><PrintIllustration variant={i + 1} /></div>
                 )}
-              </div>
+              </Link>
               <p className="data-mono text-xs text-asphalt mb-6 leading-relaxed border-l-2 border-teal pl-4">
                 {c.card}
               </p>
-              <div className="text-center">
+              <div className="flex gap-3 justify-center">
+                <Link
+                  to="/poster/$productId"
+                  params={{ productId: c.productId }}
+                  className="inline-block border border-teal text-teal px-5 py-2 text-xs data-label hover:bg-teal hover:text-offwhite transition-colors"
+                >
+                  View details
+                </Link>
                 <button
                   onClick={() => handleBuy(c.productId)}
                   disabled={loadingId === c.productId}

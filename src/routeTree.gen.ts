@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SuccessRouteImport } from './routes/success'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PosterProductIdRouteImport } from './routes/poster/$productId'
 
 const SuccessRoute = SuccessRouteImport.update({
   id: '/success',
@@ -22,31 +23,40 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PosterProductIdRoute = PosterProductIdRouteImport.update({
+  id: '/poster/$productId',
+  path: '/poster/$productId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/success': typeof SuccessRoute
+  '/poster/$productId': typeof PosterProductIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/success': typeof SuccessRoute
+  '/poster/$productId': typeof PosterProductIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/success': typeof SuccessRoute
+  '/poster/$productId': typeof PosterProductIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/success'
+  fullPaths: '/' | '/success' | '/poster/$productId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/success'
-  id: '__root__' | '/' | '/success'
+  to: '/' | '/success' | '/poster/$productId'
+  id: '__root__' | '/' | '/success' | '/poster/$productId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SuccessRoute: typeof SuccessRoute
+  PosterProductIdRoute: typeof PosterProductIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/poster/$productId': {
+      id: '/poster/$productId'
+      path: '/poster/$productId'
+      fullPath: '/poster/$productId'
+      preLoaderRoute: typeof PosterProductIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SuccessRoute: SuccessRoute,
+  PosterProductIdRoute: PosterProductIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
