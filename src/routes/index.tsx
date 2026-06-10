@@ -125,49 +125,49 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Nav */}
-      <header className="px-6 md:px-12 lg:px-20 py-6 flex items-center justify-between">
-        <a href="#top" aria-label="col.cc" className="block">
-          <img src={logoWordmark} alt="col.cc" className="h-8 md:h-9 w-auto" />
-        </a>
-        <nav className="hidden md:flex gap-10 data-label">
-          <a href="#prints" className="hover:text-teal transition-colors">Prints</a>
-          <a href="#sweatshirt" className="hover:text-teal transition-colors">Sweatshirt</a>
-          <a href="#origin" className="hover:text-teal transition-colors">Origin</a>
-          <a href="#manifesto" className="hover:text-teal transition-colors">Manifesto</a>
-        </nav>
-      </header>
+      {/* HERO — full bleed con nav superpuesto */}
+      <section id="top" className="relative w-full h-[90vh] min-h-[580px] max-h-[900px] overflow-hidden">
+        <img
+          src={heroCollection}
+          alt="col.cc — sudadera, print enmarcado y gorra con vistas a la Costa Blanca"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width={1920}
+          height={1080}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-limestone/55 via-limestone/15 to-transparent" />
 
-      {/* HERO */}
-      <section id="top" className="relative w-full">
-        <div className="relative w-full h-[80vh] min-h-[520px] max-h-[820px] overflow-hidden">
-          <img
-            src={heroCollection}
-            alt="col.cc — sudadera, print enmarcado y gorra con vistas a la Costa Blanca"
-            className="absolute inset-0 w-full h-full object-cover"
-            width={1920}
-            height={1080}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-limestone/60 via-limestone/20 to-transparent" />
-          <div className="relative z-10 h-full px-6 md:px-12 lg:px-20 flex flex-col justify-center max-w-6xl">
-            <h1 className="font-serif text-forest leading-[0.98] tracking-tight text-[12vw] md:text-[8vw] lg:text-[6.5vw] mb-6 max-w-5xl">
-              The climb, remembered.
-            </h1>
-            <p className="data-label mb-8 text-forest">Drop 01 — Costa Blanca</p>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="#prints"
-                className="inline-block bg-teal text-offwhite px-7 py-4 data-label hover:bg-forest transition-colors"
-              >
-                Shop the prints
-              </a>
-              <a
-                href="#sweatshirt"
-                className="inline-block bg-teal text-offwhite px-7 py-4 data-label hover:bg-forest transition-colors"
-              >
-                Shop the sweatshirt
-              </a>
-            </div>
+        {/* Nav flotante */}
+        <header className="absolute top-0 left-0 right-0 z-20 px-6 md:px-12 lg:px-20 py-6 flex items-center justify-between">
+          <a href="#top" aria-label="col.cc" className="block">
+            <img src={logoWordmark} alt="col.cc" className="h-8 md:h-9 w-auto" />
+          </a>
+          <nav className="hidden md:flex gap-10 data-label">
+            <a href="#prints" className="hover:text-teal transition-colors">Prints</a>
+            <a href="#sweatshirt" className="hover:text-teal transition-colors">Sweatshirt</a>
+            <a href="#origin" className="hover:text-teal transition-colors">Origin</a>
+            <a href="#manifesto" className="hover:text-teal transition-colors">Manifesto</a>
+          </nav>
+        </header>
+
+        {/* Texto hero */}
+        <div className="relative z-10 h-full px-6 md:px-12 lg:px-20 flex flex-col justify-center max-w-6xl">
+          <h1 className="font-serif text-forest leading-[0.98] tracking-tight text-[12vw] md:text-[8vw] lg:text-[6.5vw] mb-6 max-w-5xl">
+            The climb, remembered.
+          </h1>
+          <p className="data-label mb-8 text-forest">Drop 01 — Costa Blanca</p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="#prints"
+              className="inline-block bg-teal text-offwhite px-7 py-4 data-label hover:bg-forest transition-colors"
+            >
+              Shop the prints
+            </a>
+            <a
+              href="#sweatshirt"
+              className="inline-block bg-teal text-offwhite px-7 py-4 data-label hover:bg-forest transition-colors"
+            >
+              Shop the sweatshirt
+            </a>
           </div>
         </div>
       </section>
