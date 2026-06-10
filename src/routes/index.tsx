@@ -130,18 +130,18 @@ function Index() {
         <img
           src={heroCollection}
           alt="col.cc — sudadera, print enmarcado y gorra con vistas a la Costa Blanca"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-[30%_center]"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-limestone/55 via-limestone/15 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-limestone/60 via-limestone/25 to-transparent" />
 
         {/* Nav flotante */}
-        <header className="absolute top-0 left-0 right-0 z-20 px-6 md:px-12 lg:px-20 py-6 flex items-center justify-between">
+        <header className="absolute top-0 left-0 right-0 z-20 px-6 md:px-12 lg:px-20 py-7 flex items-center justify-between">
           <a href="#top" aria-label="col.cc" className="block">
-            <img src={logoWordmark} alt="col.cc" className="h-8 md:h-9 w-auto" />
+            <img src={logoWordmark} alt="col.cc" className="h-10 md:h-11 w-auto" />
           </a>
-          <nav className="hidden md:flex gap-10 data-label">
+          <nav className="hidden md:flex gap-10 data-label text-forest">
             <a href="#prints" className="hover:text-teal transition-colors">Prints</a>
             <a href="#sweatshirt" className="hover:text-teal transition-colors">Sweatshirt</a>
             <a href="#origin" className="hover:text-teal transition-colors">Origin</a>
