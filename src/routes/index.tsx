@@ -173,63 +173,63 @@ function Index() {
       </section>
 
       {/* PRINTS */}
-      <section id="prints" className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
-        <div className="flex items-end justify-between mb-16 hairline pt-8">
-          <div>
-            <p className="data-label mb-3">The Prints</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest">
-              Drop 1 · Costa Blanca
+      <section id="prints" className="bg-forest">
+        {/* Header */}
+        <div className="px-6 md:px-12 lg:px-20 pt-14 md:pt-20 pb-12">
+          <p className="data-label text-offwhite/60 mb-8 tracking-widest text-xs">The Costa Blanca Five · Open + Limited Editions</p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+            <h2 className="font-serif text-offwhite text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-lg">
+              Five climbs. One limestone coast.
             </h2>
+            <p className="font-serif italic text-offwhite/80 text-xl md:text-2xl md:text-right max-w-xs leading-snug">
+              Born on the Costa Blanca — where col.cc began.
+            </p>
           </div>
-          <p className="data-mono text-sm hidden md:block">03 / 03</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-12 lg:grid-rows-[auto_auto_auto_auto_auto_auto]">
+        {/* Imágenes en fila */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-6 md:px-12 lg:px-20">
           {climbs.map((c, i) => (
-            <article key={c.name} className="flex flex-col lg:grid lg:row-span-6 lg:grid-rows-subgrid gap-0">
-              <h3 className="font-serif text-2xl md:text-3xl text-forest mb-3 uppercase tracking-tight">
-                {c.name}
-              </h3>
-              <p className="font-serif italic text-base md:text-lg text-teal mb-4 leading-snug">
-                {c.tagline}
-              </p>
-              <p className="text-asphalt mb-6 leading-relaxed">{c.intro ?? c.copy}</p>
-              <Link
-                to="/poster/$productId"
-                params={{ productId: c.productId }}
-                className="mb-6 bg-white shadow-[0_4px_28px_rgba(0,0,0,0.13)] block group"
-              >
-                {c.image ? (
-                  <img
-                    src={c.image}
-                    alt={`${c.name} — col.cc art print`}
-                    className="w-full h-auto block group-hover:opacity-90 transition-opacity"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="aspect-[4/5]"><PrintIllustration variant={i + 1} /></div>
-                )}
-              </Link>
-              <p className="data-mono text-xs text-asphalt mb-6 leading-relaxed border-l-2 border-teal pl-4">
-                {c.card}
-              </p>
-              <div className="flex gap-3 justify-center">
-                <Link
-                  to="/poster/$productId"
-                  params={{ productId: c.productId }}
-                  className="inline-block border border-teal text-teal px-5 py-2 text-xs data-label hover:bg-teal hover:text-offwhite transition-colors"
-                >
-                  View details
-                </Link>
-                <button
-                  onClick={() => handleBuy(c.productId)}
-                  disabled={loadingId === c.productId}
-                  className="inline-block bg-teal text-offwhite px-5 py-2 text-xs data-label hover:bg-forest transition-colors disabled:opacity-60 disabled:cursor-wait"
-                >
-                  {loadingId === c.productId ? "Redirecting…" : "Buy print"}
-                </button>
+            <Link
+              key={c.name}
+              to="/poster/$productId"
+              params={{ productId: c.productId }}
+              className="block group overflow-hidden"
+            >
+              {c.image ? (
+                <img
+                  src={c.image}
+                  alt={`${c.name} — col.cc art print`}
+                  className="w-full h-auto block group-hover:opacity-90 transition-opacity"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="aspect-[3/4]"><PrintIllustration variant={i + 1} /></div>
+              )}
+            </Link>
+          ))}
+        </div>
+
+        {/* Cards info */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-6 md:px-12 lg:px-20 pt-4 pb-0">
+          {climbs.map((c, idx) => (
+            <Link
+              key={c.name}
+              to="/poster/$productId"
+              params={{ productId: c.productId }}
+              className="block bg-limestone px-6 py-7 hover:bg-limestone/90 transition-colors"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <span className="data-label text-asphalt/60 text-xs">{idx === 0 ? "Marina Alta" : idx === 1 ? "Marina Alta" : "L'Alcoià"}</span>
+                <span className="data-label text-teal text-xs">Drop 0{idx + 1}</span>
               </div>
-            </article>
+              <h3 className="font-serif text-forest text-3xl md:text-4xl mb-3 leading-tight">{c.name}</h3>
+              <p className="data-mono text-xs text-asphalt/70 mb-6">{c.km} km · {c.avg}% · {c.elev} m</p>
+              <div className="border-t border-asphalt/15 pt-5 flex items-center justify-between">
+                <span className="font-serif text-forest text-lg">From €60</span>
+                <span className="data-label text-xs text-asphalt/50">{idx === 0 ? "Limited Edition" : "Open Edition"}</span>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
