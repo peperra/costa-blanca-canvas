@@ -126,47 +126,52 @@ function Index() {
   return (
     <div className="min-h-screen bg-background">
       {/* HERO — full bleed con nav superpuesto */}
-      <section id="top" className="relative w-full h-[90vh] min-h-[580px] max-h-[900px] overflow-hidden">
+      <section id="top" className="relative w-full h-[88vh] min-h-[600px] max-h-[920px] overflow-hidden">
         <img
           src={heroCollection}
           alt="col.cc — sudadera, print enmarcado y gorra con vistas a la Costa Blanca"
-          className="absolute inset-0 w-full h-full object-cover object-[30%_center]"
+          className="absolute inset-0 w-full h-full object-cover object-[center_center]"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-limestone/60 via-limestone/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-limestone/50 via-limestone/20 to-transparent" />
 
         {/* Nav flotante */}
         <header className="absolute top-0 left-0 right-0 z-20 px-6 md:px-12 lg:px-20 py-7 flex items-center justify-between">
           <a href="#top" aria-label="col.cc" className="block">
             <img src={logoWordmark} alt="col.cc" className="h-10 md:h-11 w-auto" />
           </a>
-          <nav className="hidden md:flex gap-10 data-label text-forest">
-            <a href="#prints" className="hover:text-teal transition-colors">Prints</a>
-            <a href="#sweatshirt" className="hover:text-teal transition-colors">Sweatshirt</a>
-            <a href="#origin" className="hover:text-teal transition-colors">Origin</a>
-            <a href="#manifesto" className="hover:text-teal transition-colors">Manifesto</a>
-          </nav>
+          <div className="hidden md:flex items-center gap-10">
+            <nav className="flex gap-10 data-label text-forest">
+              <a href="#prints" className="hover:text-teal transition-colors">Prints</a>
+              <a href="#sweatshirt" className="hover:text-teal transition-colors">Sweatshirt</a>
+              <a href="#origin" className="hover:text-teal transition-colors">Origin</a>
+              <a href="#manifesto" className="hover:text-teal transition-colors">Manifesto</a>
+            </nav>
+            <a href="#prints" aria-label="Cart" className="text-forest hover:text-teal transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </a>
+          </div>
         </header>
 
         {/* Texto hero */}
-        <div className="relative z-10 h-full px-6 md:px-12 lg:px-20 flex flex-col justify-center max-w-6xl">
-          <h1 className="font-serif text-forest leading-[0.98] tracking-tight text-[12vw] md:text-[8vw] lg:text-[6.5vw] mb-6 max-w-5xl">
-            The climb, remembered.
+        <div className="relative z-10 h-full px-6 md:px-12 lg:px-20 flex flex-col justify-center max-w-2xl">
+          <h1 className="font-serif text-forest leading-[1.0] tracking-tight text-[13vw] md:text-[9vw] lg:text-[7.5vw] mb-6">
+            The climb,<br />remembered.
           </h1>
-          <p className="data-label mb-8 text-forest">Drop 01 — Costa Blanca</p>
+          <p className="data-label mb-8 text-forest tracking-widest">Costa Blanca Collection</p>
           <div className="flex flex-wrap gap-3">
             <a
               href="#prints"
-              className="inline-block bg-teal text-offwhite px-7 py-4 data-label hover:bg-forest transition-colors"
+              className="inline-block bg-forest text-offwhite px-8 py-4 data-label hover:bg-teal transition-colors"
             >
-              Shop the prints
+              Shop Prints
             </a>
             <a
               href="#sweatshirt"
-              className="inline-block bg-teal text-offwhite px-7 py-4 data-label hover:bg-forest transition-colors"
+              className="inline-block bg-forest text-offwhite px-8 py-4 data-label hover:bg-teal transition-colors"
             >
-              Shop the sweatshirt
+              Shop Apparel
             </a>
           </div>
         </div>
