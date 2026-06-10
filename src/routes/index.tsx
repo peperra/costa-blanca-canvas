@@ -31,9 +31,13 @@ export const Route = createFileRoute("/")({
 const climbs = [
   {
     name: "Coll de Rates",
+    region: "Marina Alta",
+    drop: "Drop 01",
+    edition: "Limited Edition",
     km: "6.75",
     avg: "5.24",
     elev: "626",
+    elevGain: "354",
     tagline: "From Parcent to the summit. The best.",
     intro:
       "6.75 km from the valley floor at Parcent, climbing through pine and limestone at a consistent 5.24%. No sudden ramps, no tricks. Just a road that rewards patience — and keeps riders coming back every winter.",
@@ -44,9 +48,13 @@ const climbs = [
   },
   {
     name: "Puerto de Tudons",
+    region: "Marina Alta",
+    drop: "Drop 02",
+    edition: "Open Edition",
     km: "20.35",
     avg: "4.4",
     elev: "888",
+    elevGain: "633",
     tagline: "A long road between limestone giants.",
     intro:
       "20.35 km from the coast into the heart of the Sierra de Aitana. The road rises steadily through white villages and dense Mediterranean scrub, past Sella, past the Relleu crossroads, into a series of sweeping hairpins that arrive at Tudons almost without warning. Long, quiet, and completely alone.",
@@ -57,9 +65,13 @@ const climbs = [
   },
   {
     name: "Cumbre del Sol",
+    region: "L'Alcoià",
+    drop: "Drop 03",
+    edition: "Open Edition",
     km: "6.28",
     avg: "6.0",
     elev: "378",
+    elevGain: "366",
     tagline: "Short. Savage. The sea at the top.",
     intro:
       "6.28 km from Benitatxell that don't play fair. Two hairpins hidden by vegetation open into a straight kilometre at 10%. Then 500 metres at 15%. Then, just when you think it's over, 18% to the antennae. And at the top — the entire Marina Alta, the Montgó, the rock of Ifach, and on clear days, Ibiza.",
@@ -192,49 +204,76 @@ function Index() {
           </div>
         </div>
 
-        {/* Imágenes en fila */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-6 md:px-12 lg:px-20">
+        {/* Cards integradas */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-6 md:px-12 lg:px-20 pb-16 md:pb-24">
           {climbs.map((c, i) => (
-            <Link
-              key={c.name}
-              to="/poster/$productId"
-              params={{ productId: c.productId }}
-              className="block group overflow-hidden"
-            >
-              {c.image ? (
-                <img
-                  src={c.image}
-                  alt={`${c.name} — col.cc art print`}
-                  className="w-full h-auto block group-hover:opacity-90 transition-opacity"
-                  loading="lazy"
-                />
-              ) : (
-                <div className="aspect-[3/4]"><PrintIllustration variant={i + 1} /></div>
-              )}
-            </Link>
-          ))}
-        </div>
+            <article key={c.name} className="flex flex-col bg-limestone group">
+              {/* Imagen */}
+              <Link to="/poster/$productId" params={{ productId: c.productId }} className="block overflow-hidden">
+                {c.image ? (
+                  <img
+                    src={c.image}
+                    alt={`${c.name} — col.cc art print`}
+                    className="w-full h-auto block group-hover:opacity-90 transition-opacity"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="aspect-[3/4]"><PrintIllustration variant={i + 1} /></div>
+                )}
+              </Link>
 
-        {/* Cards info */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-6 md:px-12 lg:px-20 pt-4 pb-0">
-          {climbs.map((c, idx) => (
-            <Link
-              key={c.name}
-              to="/poster/$productId"
-              params={{ productId: c.productId }}
-              className="block bg-limestone px-6 py-7 hover:bg-limestone/90 transition-colors"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <span className="data-label text-asphalt/60 text-xs">{idx === 0 ? "Marina Alta" : idx === 1 ? "Marina Alta" : "L'Alcoià"}</span>
-                <span className="data-label text-teal text-xs">Drop 0{idx + 1}</span>
+              {/* Info */}
+              <div className="px-6 pt-6 pb-7 flex flex-col flex-1">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="data-label text-asphalt/60 text-xs tracking-widest">{c.region}</span>
+                  <span className="data-label text-teal text-xs tracking-widest">{c.drop}</span>
+                </div>
+                <h3 className="font-serif text-forest text-3xl md:text-4xl mb-3 leading-tight">{c.name}</h3>
+
+                {/* Stats grid */}
+                <div className="grid grid-cols-4 gap-2 mb-6">
+                  <div>
+                    <p className="data-label text-asphalt/50 text-[9px] tracking-widest mb-1">Altitude</p>
+                    <p className="data-mono text-xs text-forest">{c.elev} m</p>
+                  </div>
+                  <div>
+                    <p className="data-label text-asphalt/50 text-[9px] tracking-widest mb-1">Distance</p>
+                    <p className="data-mono text-xs text-forest">{c.km} km</p>
+                  </div>
+                  <div>
+                    <p className="data-label text-asphalt/50 text-[9px] tracking-widest mb-1">Elev. Gain</p>
+                    <p className="data-mono text-xs text-forest">{c.elevGain} m</p>
+                  </div>
+                  <div>
+                    <p className="data-label text-asphalt/50 text-[9px] tracking-widest mb-1">Avg Gradient</p>
+                    <p className="data-mono text-xs text-forest">{c.avg}%</p>
+                  </div>
+                </div>
+
+                <div className="border-t border-asphalt/15 pt-5 flex items-center justify-between mb-6">
+                  <span className="font-serif text-forest text-xl">From €60</span>
+                  <span className="data-label text-xs text-asphalt/50 tracking-widest">{c.edition}</span>
+                </div>
+
+                {/* Botones */}
+                <div className="flex gap-3 mt-auto">
+                  <Link
+                    to="/poster/$productId"
+                    params={{ productId: c.productId }}
+                    className="flex-1 text-center border border-forest text-forest px-4 py-3 data-label text-xs hover:bg-forest hover:text-offwhite transition-colors"
+                  >
+                    View details
+                  </Link>
+                  <button
+                    onClick={() => handleBuy(c.productId)}
+                    disabled={loadingId === c.productId}
+                    className="flex-1 bg-forest text-offwhite px-4 py-3 data-label text-xs hover:bg-teal transition-colors disabled:opacity-60 disabled:cursor-wait"
+                  >
+                    {loadingId === c.productId ? "Redirecting…" : "Buy print"}
+                  </button>
+                </div>
               </div>
-              <h3 className="font-serif text-forest text-3xl md:text-4xl mb-3 leading-tight">{c.name}</h3>
-              <p className="data-mono text-xs text-asphalt/70 mb-6">{c.km} km · {c.avg}% · {c.elev} m</p>
-              <div className="border-t border-asphalt/15 pt-5 flex items-center justify-between">
-                <span className="font-serif text-forest text-lg">From €60</span>
-                <span className="data-label text-xs text-asphalt/50">{idx === 0 ? "Limited Edition" : "Open Edition"}</span>
-              </div>
-            </Link>
+            </article>
           ))}
         </div>
       </section>
