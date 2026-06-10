@@ -126,15 +126,15 @@ function Index() {
   return (
     <div className="min-h-screen bg-background">
       {/* HERO — full bleed con nav superpuesto */}
-      <section id="top" className="relative w-full h-[88vh] min-h-[600px] max-h-[920px] overflow-hidden">
+      <section id="top" className="relative w-full">
         <img
           src={heroCollection}
           alt="col.cc — sudadera, print enmarcado y gorra con vistas a la Costa Blanca"
-          className="absolute inset-0 w-full h-full object-cover object-[center_center]"
+          className="w-full h-auto block"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-limestone/50 via-limestone/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-limestone/55 via-limestone/20 to-transparent" />
 
         {/* Nav flotante */}
         <header className="absolute top-0 left-0 right-0 z-20 px-6 md:px-12 lg:px-20 py-7 flex items-center justify-between">
@@ -155,7 +155,7 @@ function Index() {
         </header>
 
         {/* Texto hero */}
-        <div className="relative z-10 h-full px-6 md:px-12 lg:px-20 flex flex-col justify-center max-w-2xl">
+        <div className="absolute inset-0 z-10 px-6 md:px-12 lg:px-20 flex flex-col justify-center max-w-2xl">
           <h1 className="font-serif text-forest leading-[1.0] tracking-tight text-[13vw] md:text-[9vw] lg:text-[7.5vw] mb-6">
             The climb,<br />remembered.
           </h1>
