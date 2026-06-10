@@ -223,51 +223,30 @@ function Index() {
               </Link>
 
               {/* Info */}
-              <div className="px-6 pt-6 pb-7 flex flex-col flex-1">
+              <div className="bg-forest px-6 pt-5 pb-6 flex flex-col flex-1">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="data-label text-asphalt/60 text-xs tracking-widest">{c.region}</span>
+                  <span className="data-label text-offwhite/50 text-xs tracking-widest">{c.region}</span>
                   <span className="data-label text-teal text-xs tracking-widest">{c.drop}</span>
                 </div>
-                <h3 className="font-serif text-forest text-3xl md:text-4xl mb-3 leading-tight">{c.name}</h3>
+                <h3 className="font-serif text-offwhite text-2xl md:text-3xl mb-5 leading-tight">{c.name}</h3>
 
-                {/* Stats grid */}
-                <div className="grid grid-cols-4 gap-2 mb-6">
-                  <div>
-                    <p className="data-label text-asphalt/50 text-[9px] tracking-widest mb-1">Altitude</p>
-                    <p className="data-mono text-xs text-forest">{c.elev} m</p>
-                  </div>
-                  <div>
-                    <p className="data-label text-asphalt/50 text-[9px] tracking-widest mb-1">Distance</p>
-                    <p className="data-mono text-xs text-forest">{c.km} km</p>
-                  </div>
-                  <div>
-                    <p className="data-label text-asphalt/50 text-[9px] tracking-widest mb-1">Elev. Gain</p>
-                    <p className="data-mono text-xs text-forest">{c.elevGain} m</p>
-                  </div>
-                  <div>
-                    <p className="data-label text-asphalt/50 text-[9px] tracking-widest mb-1">Avg Gradient</p>
-                    <p className="data-mono text-xs text-forest">{c.avg}%</p>
-                  </div>
+                <div className="border-t border-offwhite/15 pt-4 flex items-center justify-between mb-5">
+                  <span className="font-serif text-offwhite text-lg">From €60</span>
+                  <span className="data-label text-xs text-offwhite/40 tracking-widest">{c.edition}</span>
                 </div>
 
-                <div className="border-t border-asphalt/15 pt-5 flex items-center justify-between mb-6">
-                  <span className="font-serif text-forest text-xl">From €60</span>
-                  <span className="data-label text-xs text-asphalt/50 tracking-widest">{c.edition}</span>
-                </div>
-
-                {/* Botones */}
                 <div className="flex gap-3 mt-auto">
                   <Link
                     to="/poster/$productId"
                     params={{ productId: c.productId }}
-                    className="flex-1 text-center border border-forest text-forest px-4 py-3 data-label text-xs hover:bg-forest hover:text-offwhite transition-colors"
+                    className="flex-1 text-center border border-offwhite/40 text-offwhite px-4 py-3 data-label text-xs hover:border-offwhite transition-colors"
                   >
                     View details
                   </Link>
                   <button
                     onClick={() => handleBuy(c.productId)}
                     disabled={loadingId === c.productId}
-                    className="flex-1 bg-forest text-offwhite px-4 py-3 data-label text-xs hover:bg-teal transition-colors disabled:opacity-60 disabled:cursor-wait"
+                    className="flex-1 bg-teal text-offwhite px-4 py-3 data-label text-xs hover:bg-offwhite hover:text-forest transition-colors disabled:opacity-60 disabled:cursor-wait"
                   >
                     {loadingId === c.productId ? "Redirecting…" : "Buy print"}
                   </button>
