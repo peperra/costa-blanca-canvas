@@ -5,7 +5,7 @@ import printCollDeRates from "@/assets/print-coll-de-rates-web.jpg";
 import printCumbresDelSol from "@/assets/print-cumbres-del-sol-web.jpg";
 import printPuertoDeTudons from "@/assets/print-puerto-de-tudons-web.jpg";
 import sudaderaColCc from "@/assets/sudadera-col-cc.png";
-import heroCollection from "@/assets/hero-collection.jpg";
+import heroCollection from "@/assets/newhero.png";
 
 
 export const Route = createFileRoute("/")({
@@ -143,7 +143,7 @@ function Index() {
         <div className="relative w-full h-[80vh] min-h-[520px] max-h-[820px] overflow-hidden">
           <img
             src={heroCollection}
-            alt="col.cc — sudadera, print enmarcado y gorra sobre estante de piedra"
+            alt="col.cc — sudadera, print enmarcado y gorra con vistas a la Costa Blanca"
             className="absolute inset-0 w-full h-full object-cover"
             width={1920}
             height={1080}
