@@ -358,8 +358,8 @@ function Index() {
             },
             {
               num: "03",
-              title: "We print it",
-              copy: "Made to order in our Valencia studio on cotton rag, checked by eye, signed, and rolled into a kraft tube.",
+              title: "We make it",
+              copy: "Every print and garment is made to order in Madrid — checked piece by piece before it ships. No warehouse, no leftovers. Just your climb, made for you.",
             },
           ].map((step) => (
             <div key={step.num}>
@@ -445,32 +445,32 @@ function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="px-6 md:px-12 lg:px-20 py-16 mt-12">
-        <div className="hairline pt-10 grid grid-cols-2 md:grid-cols-4 gap-8 items-start">
+      <footer className="px-6 md:px-12 lg:px-20 py-16 bg-forest">
+        <div className="border-t border-offwhite/20 pt-10 grid grid-cols-2 md:grid-cols-4 gap-8 items-start">
           <div>
-            <img src={logoWordmark} alt="col.cc" className="h-7 w-auto mb-3" />
-            <p className="data-mono text-xs text-asphalt">Born in Costa Blanca</p>
+            <img src={logoWordmark} alt="col.cc" className="h-7 w-auto mb-3 brightness-0 invert" />
+            <p className="data-mono text-xs text-offwhite/60">Born in Costa Blanca</p>
           </div>
           <div>
-            <p className="data-label mb-3">Follow</p>
-            <a href="#" className="text-asphalt hover:text-teal transition-colors">Instagram</a>
+            <p className="data-label mb-3 text-offwhite/50">Follow</p>
+            <a href="#" className="text-offwhite/80 hover:text-mustard transition-colors">Instagram</a>
           </div>
           <div>
-            <p className="data-label mb-3">Contact</p>
-            <a href="mailto:hola@col.cc" className="text-asphalt hover:text-teal transition-colors">
+            <p className="data-label mb-3 text-offwhite/50">Contact</p>
+            <a href="mailto:hola@col.cc" className="text-offwhite/80 hover:text-mustard transition-colors">
               hola@col.cc
             </a>
           </div>
           <div>
-            <p className="data-label mb-3">Language</p>
+            <p className="data-label mb-3 text-offwhite/50">Language</p>
             <div className="flex gap-3 data-mono text-sm">
-              <button className="text-forest border-b border-forest">EN</button>
-              <span className="text-limestone">/</span>
-              <button className="text-asphalt hover:text-forest transition-colors">ES</button>
+              <button className="text-offwhite border-b border-offwhite">EN</button>
+              <span className="text-offwhite/30">/</span>
+              <button className="text-offwhite/60 hover:text-offwhite transition-colors">ES</button>
             </div>
           </div>
         </div>
-        <p className="data-mono text-xs text-asphalt mt-12">
+        <p className="data-mono text-xs text-offwhite/50 mt-12">
           © {new Date().getFullYear()} col.cc · The climb, remembered.
         </p>
       </footer>
