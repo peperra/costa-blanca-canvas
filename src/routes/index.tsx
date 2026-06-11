@@ -271,6 +271,32 @@ function Index() {
             </article>
           ))}
 
+        </div>
+
+        {/* Specs — prints */}
+        <div className="px-6 md:px-12 lg:px-20 pb-16 md:pb-20">
+          <div className="border-t border-offwhite/15 pt-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Paper</p>
+              <p className="data-mono text-xs text-offwhite/80">300 gsm · Fine art matte · Giclée</p>
+            </div>
+            <div>
+              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Format</p>
+              <p className="data-mono text-xs text-offwhite/80">A3 · 297 × 420 mm</p>
+            </div>
+            <div>
+              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Print or framed</p>
+              <p className="data-mono text-xs text-offwhite/80">€25 in a tube · €40 oak frame, ready to hang</p>
+            </div>
+            <div>
+              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Shipping</p>
+              <p className="data-mono text-xs text-offwhite/80">5–7 days · Spain, EU & worldwide</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Apparel */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-6 md:px-12 lg:px-20 pb-16 md:pb-24">
           {/* Apparel — sudadera */}
           <article className="flex flex-col bg-limestone group">
             <a href="#sweatshirt" className="block overflow-hidden bg-limestone">
@@ -313,20 +339,20 @@ function Index() {
           </article>
         </div>
 
-        {/* Specs de la colección */}
+        {/* Specs — apparel */}
         <div className="px-6 md:px-12 lg:px-20 pb-16 md:pb-20">
           <div className="border-t border-offwhite/15 pt-8 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Paper</p>
-              <p className="data-mono text-xs text-offwhite/80">300 gsm · Fine art matte · Giclée</p>
+              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Fabric</p>
+              <p className="data-mono text-xs text-offwhite/80">Heavyweight cotton · soft brushed inside</p>
             </div>
             <div>
-              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Format</p>
-              <p className="data-mono text-xs text-offwhite/80">A3 · 297 × 420 mm</p>
+              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Fit</p>
+              <p className="data-mono text-xs text-offwhite/80">Boxy · unisex · true to size</p>
             </div>
             <div>
-              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Print or framed</p>
-              <p className="data-mono text-xs text-offwhite/80">€25 in a tube · €40 oak frame, ready to hang</p>
+              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Print</p>
+              <p className="data-mono text-xs text-offwhite/80">Durable print, made to survive every wash</p>
             </div>
             <div>
               <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Shipping</p>
