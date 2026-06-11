@@ -139,49 +139,73 @@ function Index() {
     <div className="min-h-screen bg-background">
       {/* HERO — full bleed con nav superpuesto */}
       <section id="top" className="relative w-full">
-        <img
-          src={heroCollection}
-          alt="col.cc — sudadera, print enmarcado y gorra con vistas a la Costa Blanca"
-          className="w-full h-auto block"
-          width={1920}
-          height={1080}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-limestone/55 via-limestone/20 to-transparent" />
+        <div className="relative">
+          <img
+            src={heroCollection}
+            alt="col.cc — sudadera, print enmarcado y gorra con vistas a la Costa Blanca"
+            className="w-full h-auto block"
+            width={1920}
+            height={1080}
+          />
+          <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-limestone/55 via-limestone/20 to-transparent" />
 
-        {/* Nav flotante */}
-        <header className="absolute top-0 left-0 right-0 z-20 px-6 md:px-12 lg:px-20 py-7 flex items-center justify-between">
-          <a href="#top" aria-label="col.cc" className="block">
-            <img src={logoWordmark} alt="col.cc" className="h-10 md:h-11 w-auto" />
-          </a>
-          <div className="hidden md:flex items-center gap-10">
-            <nav className="flex gap-10 data-label text-forest">
-              <a href="#prints" className="hover:text-teal transition-colors">Prints</a>
-              <a href="#sweatshirt" className="hover:text-teal transition-colors">Sweatshirt</a>
-              <a href="#origin" className="hover:text-teal transition-colors">Origin</a>
-              <a href="#manifesto" className="hover:text-teal transition-colors">Manifesto</a>
-            </nav>
-            <a href="#prints" aria-label="Cart" className="text-forest hover:text-teal transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          {/* Nav flotante */}
+          <header className="absolute top-0 left-0 right-0 z-20 px-6 md:px-12 lg:px-20 py-5 md:py-7 flex items-center justify-between">
+            <a href="#top" aria-label="col.cc" className="block">
+              <img src={logoWordmark} alt="col.cc" className="h-8 md:h-11 w-auto" />
             </a>
-          </div>
-        </header>
+            <div className="flex items-center gap-6 md:gap-10">
+              <nav className="hidden md:flex gap-10 data-label text-forest">
+                <a href="#prints" className="hover:text-teal transition-colors">Prints</a>
+                <a href="#sweatshirt" className="hover:text-teal transition-colors">Sweatshirt</a>
+                <a href="#origin" className="hover:text-teal transition-colors">Origin</a>
+                <a href="#manifesto" className="hover:text-teal transition-colors">Manifesto</a>
+              </nav>
+              <a href="#prints" aria-label="Cart" className="text-forest hover:text-teal transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </a>
+            </div>
+          </header>
 
-        {/* Texto hero */}
-        <div className="absolute inset-0 z-10 px-6 md:px-12 lg:px-20 flex flex-col justify-center max-w-2xl">
-          <h1 className="font-serif text-forest leading-[1.0] tracking-tight text-[13vw] md:text-[9vw] lg:text-[7.5vw] mb-6">
+          {/* Texto hero — overlay solo en md+ */}
+          <div className="hidden md:flex absolute inset-0 z-10 px-6 md:px-12 lg:px-20 flex-col justify-center max-w-2xl">
+            <h1 className="font-serif text-forest leading-[1.0] tracking-tight text-[9vw] lg:text-[7.5vw] mb-6">
+              The climb,<br />remembered.
+            </h1>
+            <p className="data-label mb-8 text-forest tracking-widest">Costa Blanca Collection</p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="#prints"
+                className="inline-block bg-forest text-offwhite px-8 py-4 data-label hover:bg-teal transition-colors"
+              >
+                Shop Prints
+              </a>
+              <a
+                href="#sweatshirt"
+                className="inline-block bg-forest text-offwhite px-8 py-4 data-label hover:bg-teal transition-colors"
+              >
+                Shop Apparel
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Texto hero — bloque propio en móvil */}
+        <div className="md:hidden bg-limestone/40 px-6 pt-10 pb-12">
+          <h1 className="font-serif text-forest leading-[1.0] tracking-tight text-5xl mb-5">
             The climb,<br />remembered.
           </h1>
-          <p className="data-label mb-8 text-forest tracking-widest">Costa Blanca Collection</p>
-          <div className="flex flex-wrap gap-3">
+          <p className="data-label mb-7 text-forest tracking-widest text-xs">Costa Blanca Collection</p>
+          <div className="flex flex-col gap-3">
             <a
               href="#prints"
-              className="inline-block bg-forest text-offwhite px-8 py-4 data-label hover:bg-teal transition-colors"
+              className="block text-center bg-forest text-offwhite px-8 py-4 data-label hover:bg-teal transition-colors"
             >
               Shop Prints
             </a>
             <a
               href="#sweatshirt"
-              className="inline-block bg-forest text-offwhite px-8 py-4 data-label hover:bg-teal transition-colors"
+              className="block text-center bg-forest text-offwhite px-8 py-4 data-label hover:bg-teal transition-colors"
             >
               Shop Apparel
             </a>
