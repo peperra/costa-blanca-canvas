@@ -385,7 +385,7 @@ function Index() {
             {
               num: "03",
               title: "We make it",
-              copy: "Every print and garment is made to order in Madrid — checked piece by piece before it ships. No warehouse, no leftovers. Just your climb, made for you.",
+              copy: "Every print and garment is made to order — checked piece by piece before it ships. No warehouse, no leftovers. Just your climb, made for you.",
             },
           ].map((step) => (
             <div key={step.num}>
