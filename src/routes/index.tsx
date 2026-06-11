@@ -156,12 +156,11 @@ function Index() {
             </a>
             <div className="flex items-center gap-6 md:gap-10">
               <nav className="hidden md:flex gap-10 data-label text-forest">
-                <a href="#prints" className="hover:text-teal transition-colors">Prints</a>
-                <a href="#sweatshirt" className="hover:text-teal transition-colors">Sweatshirt</a>
+                <a href="#collection" className="hover:text-teal transition-colors">Collection</a>
                 <a href="#origin" className="hover:text-teal transition-colors">Origin</a>
                 <a href="#manifesto" className="hover:text-teal transition-colors">Manifesto</a>
               </nav>
-              <a href="#prints" aria-label="Cart" className="text-forest hover:text-teal transition-colors">
+              <a href="#collection" aria-label="Cart" className="text-forest hover:text-teal transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
               </a>
             </div>
@@ -172,19 +171,19 @@ function Index() {
             <h1 className="font-serif text-forest leading-[1.0] tracking-tight text-[9vw] lg:text-[7.5vw] mb-6">
               The climb,<br />remembered.
             </h1>
-            <p className="data-label mb-8 text-forest tracking-widest">Costa Blanca Collection</p>
-            <div className="flex flex-wrap gap-3">
+            <p className="data-label mb-8 text-forest tracking-widest">Cycling art prints & apparel</p>
+            <div className="flex flex-col items-start gap-5">
               <a
-                href="#prints"
+                href="#collection"
                 className="inline-block bg-forest text-offwhite px-8 py-4 data-label hover:bg-teal transition-colors"
               >
-                Shop Prints
+                Shop the Collection
               </a>
               <a
-                href="#sweatshirt"
-                className="inline-block bg-forest text-offwhite px-8 py-4 data-label hover:bg-teal transition-colors"
+                href="#origin"
+                className="data-label text-forest/70 hover:text-forest transition-colors text-xs tracking-widest"
               >
-                Shop Apparel
+                Our story ↓
               </a>
             </div>
           </div>
@@ -195,32 +194,32 @@ function Index() {
           <h1 className="font-serif text-forest leading-[1.0] tracking-tight text-5xl mb-5">
             The climb,<br />remembered.
           </h1>
-          <p className="data-label mb-7 text-forest tracking-widest text-xs">Costa Blanca Collection</p>
-          <div className="flex flex-col gap-3">
+          <p className="data-label mb-7 text-forest tracking-widest text-xs">Cycling art prints & apparel</p>
+          <div className="flex flex-col gap-5">
             <a
-              href="#prints"
+              href="#collection"
               className="block text-center bg-forest text-offwhite px-8 py-4 data-label hover:bg-teal transition-colors"
             >
-              Shop Prints
+              Shop the Collection
             </a>
             <a
-              href="#sweatshirt"
-              className="block text-center bg-forest text-offwhite px-8 py-4 data-label hover:bg-teal transition-colors"
+              href="#origin"
+              className="text-center data-label text-forest/70 hover:text-forest transition-colors text-xs tracking-widest"
             >
-              Shop Apparel
+              Our story ↓
             </a>
           </div>
         </div>
       </section>
 
-      {/* PRINTS */}
-      <section id="prints" className="bg-forest">
+      {/* COLLECTION */}
+      <section id="collection" className="bg-forest">
         {/* Header */}
         <div className="px-6 md:px-12 lg:px-20 pt-14 md:pt-20 pb-12">
-          <p className="data-label text-offwhite/60 mb-8 tracking-widest text-xs">The Costa Blanca Five · Open + Limited Editions</p>
+          <p className="data-label text-offwhite/60 mb-8 tracking-widest text-xs">Drop 01 — Costa Blanca · Prints + Apparel</p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <h2 className="font-serif text-offwhite text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-lg">
-              Five climbs. One limestone coast.
+              Three climbs, one sea.
             </h2>
             <p className="font-serif italic text-offwhite/80 text-xl md:text-2xl md:text-right max-w-xs leading-snug">
               Born on the Costa Blanca — where col.cc began.
@@ -255,7 +254,7 @@ function Index() {
                 <h3 className="font-serif text-offwhite text-2xl md:text-3xl mb-5 leading-tight">{c.name}</h3>
 
                 <div className="border-t border-offwhite/15 pt-4 flex items-center justify-between mb-5">
-                  <span className="font-serif text-offwhite text-lg">From €60</span>
+                  <span className="font-serif text-offwhite text-lg">From €39</span>
                   <span className="data-label text-xs text-offwhite/40 tracking-widest">{c.edition}</span>
                 </div>
 
@@ -278,6 +277,54 @@ function Index() {
               </div>
             </article>
           ))}
+
+          {/* Apparel — sudadera */}
+          <article className="flex flex-col bg-limestone group">
+            <a href="#sweatshirt" className="block overflow-hidden bg-limestone">
+              <img
+                src={sudaderaColCc}
+                alt="After Cycling Sweatshirt — col.cc"
+                className="w-full h-auto block group-hover:opacity-90 transition-opacity"
+                loading="lazy"
+              />
+            </a>
+            <div className="bg-forest px-6 pt-5 pb-6 flex flex-col flex-1">
+              <div className="flex items-center justify-between mb-4">
+                <span className="data-label text-offwhite/50 text-xs tracking-widest">Apparel</span>
+                <span className="data-label text-teal text-xs tracking-widest">Drop 01</span>
+              </div>
+              <h3 className="font-serif text-offwhite text-2xl md:text-3xl mb-5 leading-tight">After Cycling Sweatshirt</h3>
+
+              <div className="border-t border-offwhite/15 pt-4 flex items-center justify-between mb-5">
+                <span className="font-serif text-offwhite text-lg">€69</span>
+                <span className="data-label text-xs text-offwhite/40 tracking-widest">Open Edition</span>
+              </div>
+
+              <div className="flex gap-3 mt-auto">
+                <a
+                  href="#sweatshirt"
+                  className="flex-1 text-center border border-offwhite/40 text-offwhite px-4 py-3 data-label text-xs hover:border-offwhite transition-colors"
+                >
+                  View details
+                </a>
+                <button
+                  onClick={() => handleBuy("sweatshirt")}
+                  disabled={loadingId === "sweatshirt"}
+                  className="flex-1 bg-teal text-offwhite px-4 py-3 data-label text-xs hover:bg-offwhite hover:text-forest transition-colors disabled:opacity-60 disabled:cursor-wait"
+                >
+                  {loadingId === "sweatshirt" ? "Redirecting…" : "Buy"}
+                </button>
+              </div>
+            </div>
+          </article>
+
+          {/* Apparel — próximamente */}
+          <article className="flex flex-col border border-offwhite/15">
+            <div className="flex-1 min-h-[280px] flex flex-col items-center justify-center gap-3 px-6 py-16">
+              <span className="data-label text-offwhite/40 text-xs tracking-widest">Apparel · Drop 01</span>
+              <p className="font-serif italic text-offwhite/60 text-xl text-center">Second piece — coming soon.</p>
+            </div>
+          </article>
         </div>
       </section>
 
