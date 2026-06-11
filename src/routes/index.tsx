@@ -300,19 +300,13 @@ function Index() {
                 <span className="data-label text-xs text-offwhite/40 tracking-widest">Open Edition</span>
               </div>
 
-              <div className="flex gap-3 mt-auto">
-                <a
-                  href="#sweatshirt"
-                  className="flex-1 text-center border border-offwhite/40 text-offwhite px-4 py-3 data-label text-xs hover:border-offwhite transition-colors"
-                >
-                  View details
-                </a>
+              <div className="flex mt-auto">
                 <button
                   onClick={() => handleBuy("sweatshirt")}
                   disabled={loadingId === "sweatshirt"}
                   className="flex-1 bg-teal text-offwhite px-4 py-3 data-label text-xs hover:bg-offwhite hover:text-forest transition-colors disabled:opacity-60 disabled:cursor-wait"
                 >
-                  {loadingId === "sweatshirt" ? "Redirecting…" : "Buy"}
+                  {loadingId === "sweatshirt" ? "Redirecting…" : "Buy sweatshirt"}
                 </button>
               </div>
             </div>
@@ -325,66 +319,6 @@ function Index() {
               <p className="font-serif italic text-offwhite/60 text-xl text-center">Second piece — coming soon.</p>
             </div>
           </article>
-        </div>
-      </section>
-
-      {/* SWEATSHIRT */}
-      <section id="sweatshirt" className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
-        <div className="flex items-end justify-between mb-16 hairline pt-8">
-          <div>
-            <p className="data-label mb-3">The Sweatshirt</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest">
-              Drop 1 · After Cycling
-            </h2>
-          </div>
-          <p className="data-mono text-sm hidden md:block">01 / 01</p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-start">
-          <div className="lg:col-span-7 lg:col-start-6 aspect-[3/2] bg-limestone/40 overflow-hidden order-last lg:order-2 lg:row-start-1">
-            <img
-              src={sudaderaColCc}
-              alt="After Cycling Sweatshirt — Coll de Rates, frente y espalda"
-              className="w-full h-full object-contain"
-              loading="lazy"
-            />
-          </div>
-          <div className="lg:col-span-4 lg:col-start-1 lg:order-1 lg:row-start-1 lg:pt-8">
-            <h3 className="font-serif text-3xl md:text-4xl text-forest mb-4 uppercase tracking-tight leading-tight">
-              After Cycling Sweatshirt
-            </h3>
-            <p className="font-serif italic text-base md:text-lg text-teal mb-5 leading-snug">
-              For arriving at the café, not for climbing the pass.
-            </p>
-            <p className="text-asphalt mb-8 leading-relaxed max-w-md">
-              No hood. Sand cotton. col.cc on the chest. The profile of Coll de Rates on the back.
-            </p>
-
-            <dl className="grid grid-cols-2 gap-y-3 gap-x-6 mb-8 max-w-sm border-t border-asphalt/15 pt-5">
-              <dt className="data-label text-asphalt/70">Fabric</dt>
-              <dd className="data-mono text-xs text-forest">400 gsm · organic</dd>
-              <dt className="data-label text-asphalt/70">Fit</dt>
-              <dd className="data-mono text-xs text-forest">Boxy · unisex</dd>
-              <dt className="data-label text-asphalt/70">Print</dt>
-              <dd className="data-mono text-xs text-forest">Embroidered</dd>
-              <dt className="data-label text-asphalt/70">Made in</dt>
-              <dd className="data-mono text-xs text-forest">Portugal</dd>
-            </dl>
-
-            <p className="data-mono text-xs text-asphalt mb-6 leading-relaxed border-l-2 border-teal pl-4 max-w-md">
-              6.75 km · 626 m · Coll de Rates. The climb on the back. The café on the chest.
-            </p>
-
-            <div className="text-center lg:text-left">
-              <button
-                onClick={() => handleBuy("sweatshirt")}
-                disabled={loadingId === "sweatshirt"}
-                className="inline-block bg-teal text-offwhite px-5 py-2 text-xs data-label hover:bg-forest transition-colors disabled:opacity-60 disabled:cursor-wait"
-              >
-                {loadingId === "sweatshirt" ? "Redirecting…" : "Shop sweatshirt"}
-              </button>
-            </div>
-          </div>
         </div>
       </section>
 
