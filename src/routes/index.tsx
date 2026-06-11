@@ -248,14 +248,13 @@ function Index() {
               {/* Info */}
               <div className="bg-forest px-6 pt-5 pb-6 flex flex-col flex-1">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="data-label text-offwhite/50 text-xs tracking-widest">{c.region}</span>
-                  <span className="data-label text-teal text-xs tracking-widest">{c.drop}</span>
+                  <span className="data-label text-offwhite/50 text-xs tracking-widest">Art Print</span>
+                  <span className="data-label text-teal text-xs tracking-widest">{c.edition}</span>
                 </div>
                 <h3 className="font-serif text-offwhite text-2xl md:text-3xl mb-5 leading-tight">{c.name}</h3>
 
-                <div className="border-t border-offwhite/15 pt-4 flex items-center justify-between mb-5">
+                <div className="border-t border-offwhite/15 pt-4 flex items-center mb-5">
                   <span className="font-serif text-offwhite text-lg">From €39</span>
-                  <span className="data-label text-xs text-offwhite/40 tracking-widest">{c.edition}</span>
                 </div>
 
                 <div className="flex gap-3 mt-auto">
@@ -291,13 +290,12 @@ function Index() {
             <div className="bg-forest px-6 pt-5 pb-6 flex flex-col flex-1">
               <div className="flex items-center justify-between mb-4">
                 <span className="data-label text-offwhite/50 text-xs tracking-widest">Apparel</span>
-                <span className="data-label text-teal text-xs tracking-widest">Drop 01</span>
+                <span className="data-label text-teal text-xs tracking-widest">Open Edition</span>
               </div>
               <h3 className="font-serif text-offwhite text-2xl md:text-3xl mb-5 leading-tight">After Cycling Sweatshirt</h3>
 
-              <div className="border-t border-offwhite/15 pt-4 flex items-center justify-between mb-5">
+              <div className="border-t border-offwhite/15 pt-4 flex items-center mb-5">
                 <span className="font-serif text-offwhite text-lg">€69</span>
-                <span className="data-label text-xs text-offwhite/40 tracking-widest">Open Edition</span>
               </div>
 
               <div className="flex mt-auto">
@@ -315,7 +313,7 @@ function Index() {
           {/* Apparel — próximamente */}
           <article className="flex flex-col border border-offwhite/15">
             <div className="flex-1 min-h-[280px] flex flex-col items-center justify-center gap-3 px-6 py-16">
-              <span className="data-label text-offwhite/40 text-xs tracking-widest">Apparel · Drop 01</span>
+              <span className="data-label text-offwhite/40 text-xs tracking-widest">Apparel</span>
               <p className="font-serif italic text-offwhite/60 text-xl text-center">Second piece — coming soon.</p>
             </div>
           </article>
