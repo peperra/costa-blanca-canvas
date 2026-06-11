@@ -336,36 +336,72 @@ function Index() {
         </div>
       </section>
 
+      {/* THE PROCESS */}
+      <section id="process" className="px-6 md:px-12 lg:px-20 py-24 md:py-32 bg-background">
+        <div className="text-center mb-16 md:mb-20">
+          <p className="data-label mb-4 text-asphalt/60 tracking-widest text-xs">The Process</p>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-forest">
+            From the road to your wall.
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-6xl mx-auto">
+          {[
+            {
+              num: "01",
+              title: "We ride it",
+              copy: "Every climb in the collection is ridden and surveyed — the real gradient, the real summit, recorded from the road.",
+            },
+            {
+              num: "02",
+              title: "We draw it",
+              copy: "The elevation profile and route become a composition — typeset by hand, balanced for the wall, never auto-generated.",
+            },
+            {
+              num: "03",
+              title: "We print it",
+              copy: "Made to order in our Valencia studio on cotton rag, checked by eye, signed, and rolled into a kraft tube.",
+            },
+          ].map((step) => (
+            <div key={step.num}>
+              <p className="data-mono text-sm text-teal mb-4">{step.num}</p>
+              <div className="border-t border-asphalt/15 pt-6 mb-4" />
+              <h3 className="font-serif text-2xl md:text-3xl text-forest mb-4">{step.title}</h3>
+              <p className="text-asphalt leading-relaxed">{step.copy}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ORIGIN */}
-      <section id="origin" className="px-6 md:px-12 lg:px-20 py-28 md:py-40 bg-limestone/30">
+      <section id="origin" className="px-6 md:px-12 lg:px-20 py-28 md:py-40 bg-forest">
         <div className="max-w-3xl mx-auto">
-          <div className="hairline pt-8 mb-16 text-center">
+          <div className="hairline pt-8 mb-16 text-center border-offwhite/20">
             <p className="data-label mb-3 text-mustard">Origin</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest">
+            <h2 className="font-serif text-4xl md:text-5xl text-offwhite">
               Born on these roads.
             </h2>
           </div>
-          <div className="space-y-8 font-serif text-xl md:text-2xl text-forest leading-snug text-center">
+          <div className="space-y-8 font-serif text-xl md:text-2xl text-offwhite/90 leading-snug text-center">
             <p>Costa Blanca is where European cycling comes to survive the winter.</p>
             <p>The light is different here. The roads climb differently. And the silence at the top of a col — that's different too.</p>
             <p>But these roads belong to someone. To the farmer on the tractor at 7am. To the woman walking to the market in Alcalalí. To the kid on the school bus on the narrow road above Jalón. They were here before the pelotons arrived. They'll be here long after.</p>
             <p>col.cc was born here. Not to claim this place — but to honour it. To turn those climbs into memories worth keeping. And to make sure the people who live here are glad we came.</p>
-            <p className="font-serif italic text-teal">Every climb has a community. Every road belongs to someone.</p>
+            <p className="font-serif italic text-mustard">Every climb has a community. Every road belongs to someone.</p>
           </div>
         </div>
       </section>
 
       {/* MANIFESTO */}
-      <section id="manifesto" className="px-6 md:px-12 lg:px-20 py-20 md:py-28 bg-forest text-offwhite">
+      <section id="manifesto" className="px-6 md:px-12 lg:px-20 py-20 md:py-28 bg-background">
         <div className="max-w-3xl mx-auto">
-          <div className="hairline pt-8 mb-16 border-offwhite/20">
+          <div className="hairline pt-8 mb-16">
             <p className="data-label mb-3 text-mustard">Manifesto</p>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight text-forest">
               Cyclist, come here.
             </h2>
           </div>
 
-          <p className="font-serif italic text-lg md:text-xl text-offwhite/70 mb-16 leading-relaxed">
+          <p className="font-serif italic text-lg md:text-xl text-asphalt mb-16 leading-relaxed">
             We've all seen it. Cyclist Go Home. Painted on a wall, somewhere on a climb you love.
             We understand why it's there. This is our answer — and our ask.
           </p>
@@ -376,10 +412,10 @@ function Index() {
               <ul className="space-y-6">
                 {cyclistPledges.map((pledge, i) => (
                   <li key={i} className="flex gap-4">
-                    <span className="data-mono text-xs text-offwhite/30 mt-1 shrink-0">
+                    <span className="data-mono text-xs text-asphalt/40 mt-1 shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="text-offwhite/80 leading-relaxed">{pledge}</p>
+                    <p className="text-asphalt leading-relaxed">{pledge}</p>
                   </li>
                 ))}
               </ul>
@@ -390,18 +426,18 @@ function Index() {
               <ul className="space-y-6">
                 {localPledges.map((pledge, i) => (
                   <li key={i} className="flex gap-4">
-                    <span className="data-mono text-xs text-offwhite/30 mt-1 shrink-0">
+                    <span className="data-mono text-xs text-asphalt/40 mt-1 shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="text-offwhite/80 leading-relaxed">{pledge}</p>
+                    <p className="text-asphalt leading-relaxed">{pledge}</p>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
-          <div className="mt-20 pt-10 border-t border-offwhite/20">
-            <p className="font-serif text-2xl md:text-3xl text-offwhite">
+          <div className="mt-20 pt-10 border-t border-asphalt/15">
+            <p className="font-serif text-2xl md:text-3xl text-forest">
               Cyclist, come here. col.cc.
             </p>
           </div>
