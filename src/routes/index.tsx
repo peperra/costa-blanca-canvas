@@ -249,29 +249,23 @@ function Index() {
               <div className="bg-forest px-6 pt-5 pb-6 flex flex-col flex-1">
                 <div className="flex items-center justify-between mb-4">
                   <span className="data-label text-offwhite/50 text-xs tracking-widest">Art Print</span>
-                  <span className="data-label text-teal text-xs tracking-widest">{c.edition}</span>
+                  <span className="data-label text-teal text-xs tracking-widest">A3 · Giclée</span>
                 </div>
                 <h3 className="font-serif text-offwhite text-2xl md:text-3xl mb-5 leading-tight">{c.name}</h3>
 
-                <div className="border-t border-offwhite/15 pt-4 flex items-center mb-5">
-                  <span className="font-serif text-offwhite text-lg">From €39</span>
+                <div className="border-t border-offwhite/15 pt-4 flex items-center justify-between mb-5">
+                  <span className="font-serif text-offwhite text-lg">From €25</span>
+                  <span className="data-label text-xs text-offwhite/40 tracking-widest">Framed €40</span>
                 </div>
 
-                <div className="flex gap-3 mt-auto">
+                <div className="flex mt-auto">
                   <Link
                     to="/poster/$productId"
                     params={{ productId: c.productId }}
-                    className="flex-1 text-center border border-offwhite/40 text-offwhite px-4 py-3 data-label text-xs hover:border-offwhite transition-colors"
+                    className="flex-1 text-center bg-teal text-offwhite px-4 py-3 data-label text-xs hover:bg-offwhite hover:text-forest transition-colors"
                   >
-                    View details
+                    View & buy
                   </Link>
-                  <button
-                    onClick={() => handleBuy(c.productId)}
-                    disabled={loadingId === c.productId}
-                    className="flex-1 bg-teal text-offwhite px-4 py-3 data-label text-xs hover:bg-offwhite hover:text-forest transition-colors disabled:opacity-60 disabled:cursor-wait"
-                  >
-                    {loadingId === c.productId ? "Redirecting…" : "Buy print"}
-                  </button>
                 </div>
               </div>
             </article>
@@ -290,7 +284,7 @@ function Index() {
             <div className="bg-forest px-6 pt-5 pb-6 flex flex-col flex-1">
               <div className="flex items-center justify-between mb-4">
                 <span className="data-label text-offwhite/50 text-xs tracking-widest">Apparel</span>
-                <span className="data-label text-teal text-xs tracking-widest">Open Edition</span>
+                <span className="data-label text-teal text-xs tracking-widest">Boxy · Unisex</span>
               </div>
               <h3 className="font-serif text-offwhite text-2xl md:text-3xl mb-5 leading-tight">After Cycling Sweatshirt</h3>
 
@@ -317,6 +311,28 @@ function Index() {
               <p className="font-serif italic text-offwhite/60 text-xl text-center">Second piece — coming soon.</p>
             </div>
           </article>
+        </div>
+
+        {/* Specs de la colección */}
+        <div className="px-6 md:px-12 lg:px-20 pb-16 md:pb-20">
+          <div className="border-t border-offwhite/15 pt-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Paper</p>
+              <p className="data-mono text-xs text-offwhite/80">300 gsm · Fine art matte · Giclée</p>
+            </div>
+            <div>
+              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Format</p>
+              <p className="data-mono text-xs text-offwhite/80">A3 · 297 × 420 mm</p>
+            </div>
+            <div>
+              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Print or framed</p>
+              <p className="data-mono text-xs text-offwhite/80">€25 in a tube · €40 oak frame, ready to hang</p>
+            </div>
+            <div>
+              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Shipping</p>
+              <p className="data-mono text-xs text-offwhite/80">5–7 days · Spain, EU & worldwide</p>
+            </div>
+          </div>
         </div>
       </section>
 

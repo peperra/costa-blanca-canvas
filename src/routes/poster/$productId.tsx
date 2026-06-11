@@ -82,11 +82,15 @@ const posters: Record<string, {
 const specs = [
   { label: "Format", value: "A3 · 297 × 420 mm" },
   { label: "Paper", value: "300 gsm · Fine art matte" },
-  { label: "Frame", value: "Solid oak · handmade" },
-  { label: "Glazing", value: "Anti-reflective acrylic" },
+  { label: "Frame (framed option)", value: "Solid oak · anti-reflective acrylic" },
   { label: "Ships in", value: "5–7 business days" },
   { label: "Shipping", value: "Spain · EU · Worldwide" },
 ];
+
+const variants = [
+  { id: "print", label: "Print only", price: 25, note: "Shipped rolled in a tube" },
+  { id: "framed", label: "Framed", price: 40, note: "Oak frame · ready to hang" },
+] as const;
 
 function PosterPDP() {
   const { productId } = Route.useParams();
@@ -94,6 +98,7 @@ function PosterPDP() {
 
   const [activeIdx, setActiveIdx] = useState(0);
   const [loadingId, setLoadingId] = useState<string | null>(null);
+  const [variant, setVariant] = useState<"print" | "framed">("framed");
 
   if (!poster) {
     return (
@@ -110,7 +115,7 @@ function PosterPDP() {
       const res = await fetch("/api/create-checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productId: poster.productId }),
+        body: JSON.stringify({ productId: poster.productId, variant }),
       });
       const { url } = await res.json();
       window.location.href = url;
@@ -225,13 +230,39 @@ function PosterPDP() {
               </dl>
             </div>
 
+            {/* Variante */}
+            <div className="mb-6">
+              <p className="data-label mb-4 text-forest">Choose your format</p>
+              <div className="grid grid-cols-2 gap-3">
+                {variants.map((v) => (
+                  <button
+                    key={v.id}
+                    onClick={() => setVariant(v.id)}
+                    className={`text-left border px-5 py-4 transition-colors ${
+                      variant === v.id
+                        ? "border-teal bg-teal/5"
+                        : "border-asphalt/20 hover:border-asphalt/40"
+                    }`}
+                  >
+                    <span className="flex items-baseline justify-between mb-1">
+                      <span className="data-label text-forest text-xs">{v.label}</span>
+                      <span className="font-serif text-forest text-lg">€{v.price}</span>
+                    </span>
+                    <span className="data-mono text-[10px] text-asphalt/70 block">{v.note}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* CTA */}
             <button
               onClick={handleBuy}
               disabled={loadingId === poster.productId}
               className="w-full bg-teal text-offwhite py-4 data-label text-sm hover:bg-forest transition-colors disabled:opacity-60 disabled:cursor-wait mb-4"
             >
-              {loadingId === poster.productId ? "Redirecting…" : "Buy print — framed & ready to hang"}
+              {loadingId === poster.productId
+                ? "Redirecting…"
+                : `Buy ${variant === "framed" ? "framed print" : "print"} — €${variants.find((v) => v.id === variant)!.price}`}
             </button>
             <p className="data-mono text-xs text-asphalt text-center">
               Free shipping within Spain · 5–7 business days
