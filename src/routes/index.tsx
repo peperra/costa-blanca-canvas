@@ -1,13 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
 import logoWordmark from "@/assets/logo-wordmark.svg";
 import printCollDeRates from "@/assets/print-coll-de-rates-web.jpg";
 import printCumbresDelSol from "@/assets/print-cumbres-del-sol-web.jpg";
 import printPuertoDeTudons from "@/assets/print-puerto-de-tudons-web.jpg";
 import camisetaRates1 from "@/assets/camisetarates1.png";
-import camisetaRates2 from "@/assets/camisetarates2.png";
-import camisetaRates3 from "@/assets/camisetarates3.png";
-import camisetaRates4 from "@/assets/camisetarates4.png";
 import heroCollection from "@/assets/newhero.png";
 
 
@@ -119,28 +115,7 @@ function PrintIllustration({ variant }: { variant: number }) {
   );
 }
 
-const camisetaRatesImages = [camisetaRates1, camisetaRates2, camisetaRates3, camisetaRates4];
-
 function Index() {
-  const [loadingId, setLoadingId] = useState<string | null>(null);
-  const [tshirtImage, setTshirtImage] = useState(camisetaRates1);
-
-  async function handleBuy(productId: string) {
-    setLoadingId(productId);
-    try {
-      const res = await fetch("/api/create-checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productId }),
-      });
-      const { url } = await res.json();
-      window.location.href = url;
-    } catch (err) {
-      console.error("Checkout error:", err);
-      setLoadingId(null);
-    }
-  }
-
   return (
     <div className="min-h-screen bg-background">
       {/* HERO — full bleed con nav superpuesto */}
@@ -305,37 +280,21 @@ function Index() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-6 md:px-12 lg:px-20 pb-16 md:pb-24">
           {/* Apparel — camiseta Coll de Rates */}
           <article className="flex flex-col bg-limestone group">
-            <div className="bg-limestone">
-              <button
-                type="button"
-                onClick={() => handleBuy("tshirt")}
-                className="block w-full overflow-hidden bg-limestone"
-              >
-                <img
-                  src={tshirtImage}
-                  alt="Coll de Rates T-Shirt — col.cc"
-                  className="w-full h-auto block group-hover:opacity-90 transition-opacity"
-                  loading="lazy"
-                />
-              </button>
-              <div className="flex gap-2 px-3 py-3">
-                {camisetaRatesImages.map((img, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onMouseEnter={() => setTshirtImage(img)}
-                    onFocus={() => setTshirtImage(img)}
-                    onClick={() => setTshirtImage(img)}
-                    aria-label={`Vista ${i + 1} de la camiseta Coll de Rates`}
-                    className={`flex-1 overflow-hidden border transition-colors ${
-                      tshirtImage === img ? "border-forest" : "border-transparent hover:border-forest/40"
-                    }`}
-                  >
-                    <img src={img} alt="" className="w-full h-auto block" loading="lazy" />
-                  </button>
-                ))}
-              </div>
-            </div>
+            {/* Imagen — solo la espalda */}
+            <Link
+              to="/apparel/$productId"
+              params={{ productId: "coll-de-rates" }}
+              className="block overflow-hidden bg-limestone"
+            >
+              <img
+                src={camisetaRates1}
+                alt="Coll de Rates T-Shirt — col.cc"
+                className="w-full h-auto block group-hover:opacity-90 transition-opacity"
+                loading="lazy"
+              />
+            </Link>
+
+            {/* Info */}
             <div className="bg-forest px-6 pt-5 pb-6 flex flex-col flex-1">
               <div className="flex items-center justify-between mb-4">
                 <span className="data-label text-offwhite/50 text-xs tracking-widest">Apparel</span>
@@ -348,13 +307,13 @@ function Index() {
               </div>
 
               <div className="flex mt-auto">
-                <button
-                  onClick={() => handleBuy("tshirt")}
-                  disabled={loadingId === "tshirt"}
-                  className="flex-1 bg-teal text-offwhite px-4 py-3 data-label text-xs hover:bg-offwhite hover:text-forest transition-colors disabled:opacity-60 disabled:cursor-wait"
+                <Link
+                  to="/apparel/$productId"
+                  params={{ productId: "coll-de-rates" }}
+                  className="flex-1 text-center bg-teal text-offwhite px-4 py-3 data-label text-xs hover:bg-offwhite hover:text-forest transition-colors"
                 >
-                  {loadingId === "tshirt" ? "Redirecting…" : "Buy t-shirt"}
-                </button>
+                  View & buy
+                </Link>
               </div>
             </div>
           </article>

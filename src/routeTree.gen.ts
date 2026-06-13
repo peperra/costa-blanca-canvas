@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SuccessRouteImport } from './routes/success'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PosterProductIdRouteImport } from './routes/poster/$productId'
+import { Route as ApparelProductIdRouteImport } from './routes/apparel/$productId'
 
 const SuccessRoute = SuccessRouteImport.update({
   id: '/success',
@@ -28,34 +29,43 @@ const PosterProductIdRoute = PosterProductIdRouteImport.update({
   path: '/poster/$productId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApparelProductIdRoute = ApparelProductIdRouteImport.update({
+  id: '/apparel/$productId',
+  path: '/apparel/$productId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/success': typeof SuccessRoute
+  '/apparel/$productId': typeof ApparelProductIdRoute
   '/poster/$productId': typeof PosterProductIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/success': typeof SuccessRoute
+  '/apparel/$productId': typeof ApparelProductIdRoute
   '/poster/$productId': typeof PosterProductIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/success': typeof SuccessRoute
+  '/apparel/$productId': typeof ApparelProductIdRoute
   '/poster/$productId': typeof PosterProductIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/success' | '/poster/$productId'
+  fullPaths: '/' | '/success' | '/apparel/$productId' | '/poster/$productId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/success' | '/poster/$productId'
-  id: '__root__' | '/' | '/success' | '/poster/$productId'
+  to: '/' | '/success' | '/apparel/$productId' | '/poster/$productId'
+  id: '__root__' | '/' | '/success' | '/apparel/$productId' | '/poster/$productId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SuccessRoute: typeof SuccessRoute
+  ApparelProductIdRoute: typeof ApparelProductIdRoute
   PosterProductIdRoute: typeof PosterProductIdRoute
 }
 
@@ -82,12 +92,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PosterProductIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/apparel/$productId': {
+      id: '/apparel/$productId'
+      path: '/apparel/$productId'
+      fullPath: '/apparel/$productId'
+      preLoaderRoute: typeof ApparelProductIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SuccessRoute: SuccessRoute,
+  ApparelProductIdRoute: ApparelProductIdRoute,
   PosterProductIdRoute: PosterProductIdRoute,
 }
 export const routeTree = rootRouteImport
