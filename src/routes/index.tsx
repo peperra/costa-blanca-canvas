@@ -197,7 +197,7 @@ function Index() {
       <section id="collection" className="bg-forest">
         {/* Header */}
         <div className="px-6 md:px-12 lg:px-20 pt-14 md:pt-20 pb-12">
-          <p className="data-label text-offwhite/60 mb-8 tracking-widest text-xs">Drop 01 — Costa Blanca · Prints + Apparel</p>
+          <p className="data-label text-offwhite/60 mb-8 tracking-widest text-xs">Drop 01 — Costa Blanca · The prints</p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <h2 className="font-serif text-offwhite text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-lg">
               Three climbs, one sea.
@@ -272,6 +272,21 @@ function Index() {
             <div>
               <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Shipping</p>
               <p className="data-mono text-xs text-offwhite/80">5–7 days · Spain, EU & worldwide</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Header — apparel (separa prints de camisetas) */}
+        <div className="px-6 md:px-12 lg:px-20 pt-20 md:pt-28 pb-12">
+          <div className="border-t border-offwhite/15 pt-12 md:pt-16">
+            <p className="data-label text-offwhite/60 mb-8 tracking-widest text-xs">Drop 01 — Costa Blanca · Apparel</p>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+              <h2 className="font-serif text-offwhite text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-lg">
+                Wear the climb.
+              </h2>
+              <p className="font-serif italic text-offwhite/80 text-xl md:text-2xl md:text-right max-w-xs leading-snug">
+                Off the wall, onto the road.
+              </p>
             </div>
           </div>
         </div>
