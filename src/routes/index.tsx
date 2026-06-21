@@ -285,7 +285,7 @@ function Index() {
                 Wear the climb.
               </h2>
               <p className="font-serif italic text-offwhite/80 text-xl md:text-2xl md:text-right max-w-xs leading-snug">
-                Off the wall, onto the road.
+                The climb, now on your back.
               </p>
             </div>
           </div>
