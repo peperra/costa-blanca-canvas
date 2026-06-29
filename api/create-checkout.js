@@ -22,16 +22,6 @@ const CATALOG = {
     description: "6.28 km · 378 m · Benitatxell to the antennae.",
     variants: POSTER_VARIANTS,
   },
-  sweatshirt: {
-    name: "After Cycling Sweatshirt — Coll de Rates",
-    description: "No hood. Sand. col.cc on the chest.",
-    amount: 6900, // ← cambia el precio aquí
-  },
-  tshirt: {
-    name: "Coll de Rates T-Shirt — col.cc",
-    description: "6.5 · 5.4 · 626. col.cc on the chest, the climb on the back.",
-    amount: 4000, // ← cambia el precio aquí
-  },
 };
 
 export default async function handler(req, res) {

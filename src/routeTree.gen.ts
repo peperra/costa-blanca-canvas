@@ -12,7 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SuccessRouteImport } from './routes/success'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PosterProductIdRouteImport } from './routes/poster/$productId'
-import { Route as ApparelProductIdRouteImport } from './routes/apparel/$productId'
+import { Route as LegalDocRouteImport } from './routes/legal/$doc'
 
 const SuccessRoute = SuccessRouteImport.update({
   id: '/success',
@@ -29,43 +29,48 @@ const PosterProductIdRoute = PosterProductIdRouteImport.update({
   path: '/poster/$productId',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApparelProductIdRoute = ApparelProductIdRouteImport.update({
-  id: '/apparel/$productId',
-  path: '/apparel/$productId',
+const LegalDocRoute = LegalDocRouteImport.update({
+  id: '/legal/$doc',
+  path: '/legal/$doc',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/success': typeof SuccessRoute
-  '/apparel/$productId': typeof ApparelProductIdRoute
+  '/legal/$doc': typeof LegalDocRoute
   '/poster/$productId': typeof PosterProductIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/success': typeof SuccessRoute
-  '/apparel/$productId': typeof ApparelProductIdRoute
+  '/legal/$doc': typeof LegalDocRoute
   '/poster/$productId': typeof PosterProductIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/success': typeof SuccessRoute
-  '/apparel/$productId': typeof ApparelProductIdRoute
+  '/legal/$doc': typeof LegalDocRoute
   '/poster/$productId': typeof PosterProductIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/success' | '/apparel/$productId' | '/poster/$productId'
+  fullPaths: '/' | '/success' | '/legal/$doc' | '/poster/$productId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/success' | '/apparel/$productId' | '/poster/$productId'
-  id: '__root__' | '/' | '/success' | '/apparel/$productId' | '/poster/$productId'
+  to: '/' | '/success' | '/legal/$doc' | '/poster/$productId'
+  id:
+    | '__root__'
+    | '/'
+    | '/success'
+    | '/legal/$doc'
+    | '/poster/$productId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SuccessRoute: typeof SuccessRoute
-  ApparelProductIdRoute: typeof ApparelProductIdRoute
+  LegalDocRoute: typeof LegalDocRoute
   PosterProductIdRoute: typeof PosterProductIdRoute
 }
 
@@ -92,11 +97,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PosterProductIdRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/apparel/$productId': {
-      id: '/apparel/$productId'
-      path: '/apparel/$productId'
-      fullPath: '/apparel/$productId'
-      preLoaderRoute: typeof ApparelProductIdRouteImport
+    '/legal/$doc': {
+      id: '/legal/$doc'
+      path: '/legal/$doc'
+      fullPath: '/legal/$doc'
+      preLoaderRoute: typeof LegalDocRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -105,7 +110,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SuccessRoute: SuccessRoute,
-  ApparelProductIdRoute: ApparelProductIdRoute,
+  LegalDocRoute: LegalDocRoute,
   PosterProductIdRoute: PosterProductIdRoute,
 }
 export const routeTree = rootRouteImport

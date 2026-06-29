@@ -3,7 +3,6 @@ import logoWordmark from "@/assets/logo-wordmark.svg";
 import printCollDeRates from "@/assets/print-coll-de-rates-web.jpg";
 import printCumbresDelSol from "@/assets/print-cumbres-del-sol-web.jpg";
 import printPuertoDeTudons from "@/assets/print-puerto-de-tudons-web.jpg";
-import camisetaRates1 from "@/assets/camisetarates1.png";
 import heroCollection from "@/assets/newhero.png";
 
 
@@ -123,7 +122,7 @@ function Index() {
         <div className="relative">
           <img
             src={heroCollection}
-            alt="col.cc — camiseta, print enmarcado y gorra con vistas a la Costa Blanca"
+            alt="col.cc — prints enmarcados de los puertos de la Costa Blanca"
             className="w-full h-auto block"
             width={1920}
             height={1080}
@@ -152,7 +151,7 @@ function Index() {
             <h1 className="font-serif text-forest leading-[1.0] tracking-tight text-[9vw] lg:text-[7.5vw] mb-6">
               The climb,<br />remembered.
             </h1>
-            <p className="data-label mb-8 text-forest tracking-widest">Cycling art prints & apparel</p>
+            <p className="data-label mb-8 text-forest tracking-widest">Cycling art prints</p>
             <div className="flex flex-col items-start gap-5">
               <a
                 href="#collection"
@@ -175,7 +174,7 @@ function Index() {
           <h1 className="font-serif text-forest leading-[1.0] tracking-tight text-5xl mb-5">
             The climb,<br />remembered.
           </h1>
-          <p className="data-label mb-7 text-forest tracking-widest text-xs">Cycling art prints & apparel</p>
+          <p className="data-label mb-7 text-forest tracking-widest text-xs">Cycling art prints</p>
           <div className="flex flex-col gap-5">
             <a
               href="#collection"
@@ -197,7 +196,7 @@ function Index() {
       <section id="collection" className="bg-forest">
         {/* Header */}
         <div className="px-6 md:px-12 lg:px-20 pt-14 md:pt-20 pb-12">
-          <p className="data-label text-offwhite/60 mb-8 tracking-widest text-xs">Drop 01 — Costa Blanca · The prints</p>
+          <p className="data-label text-offwhite/60 mb-8 tracking-widest text-xs">Drop 01 — Costa Blanca</p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <h2 className="font-serif text-offwhite text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-lg">
               Three climbs, one sea.
@@ -276,93 +275,6 @@ function Index() {
           </div>
         </div>
 
-        {/* Header — apparel (separa prints de camisetas) */}
-        <div className="px-6 md:px-12 lg:px-20 pt-20 md:pt-28 pb-12">
-          <div className="border-t border-offwhite/15 pt-12 md:pt-16">
-            <p className="data-label text-offwhite/60 mb-8 tracking-widest text-xs">Drop 01 — Costa Blanca · Apparel</p>
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-              <h2 className="font-serif text-offwhite text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-lg">
-                Wear the climb.
-              </h2>
-              <p className="font-serif italic text-offwhite/80 text-xl md:text-2xl md:text-right max-w-xs leading-snug">
-                The climb, now on your back.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Apparel */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-6 md:px-12 lg:px-20 pb-16 md:pb-24">
-          {/* Apparel — camiseta Coll de Rates */}
-          <article className="flex flex-col bg-limestone group">
-            {/* Imagen — solo la espalda */}
-            <Link
-              to="/apparel/$productId"
-              params={{ productId: "coll-de-rates" }}
-              className="block overflow-hidden bg-limestone"
-            >
-              <img
-                src={camisetaRates1}
-                alt="Coll de Rates T-Shirt — col.cc"
-                className="w-full h-auto block group-hover:opacity-90 transition-opacity"
-                loading="lazy"
-              />
-            </Link>
-
-            {/* Info */}
-            <div className="bg-forest px-6 pt-5 pb-6 flex flex-col flex-1">
-              <div className="flex items-center justify-between mb-4">
-                <span className="data-label text-offwhite/50 text-xs tracking-widest">Apparel</span>
-                <span className="data-label text-teal text-xs tracking-widest">Regular · Unisex</span>
-              </div>
-              <h3 className="font-serif text-offwhite text-2xl md:text-3xl mb-5 leading-tight">Coll de Rates T-Shirt</h3>
-
-              <div className="border-t border-offwhite/15 pt-4 flex items-center mb-5">
-                <span className="font-serif text-offwhite text-lg">€40</span>
-              </div>
-
-              <div className="flex mt-auto">
-                <Link
-                  to="/apparel/$productId"
-                  params={{ productId: "coll-de-rates" }}
-                  className="flex-1 text-center bg-teal text-offwhite px-4 py-3 data-label text-xs hover:bg-offwhite hover:text-forest transition-colors"
-                >
-                  View & buy
-                </Link>
-              </div>
-            </div>
-          </article>
-
-          {/* Apparel — próximamente */}
-          <article className="flex flex-col border border-offwhite/15">
-            <div className="flex-1 min-h-[280px] flex flex-col items-center justify-center gap-3 px-6 py-16">
-              <span className="data-label text-offwhite/40 text-xs tracking-widest">Apparel</span>
-              <p className="font-serif italic text-offwhite/60 text-xl text-center">Second piece — coming soon.</p>
-            </div>
-          </article>
-        </div>
-
-        {/* Specs — apparel */}
-        <div className="px-6 md:px-12 lg:px-20 pb-16 md:pb-20">
-          <div className="border-t border-offwhite/15 pt-8 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Fabric</p>
-              <p className="data-mono text-xs text-offwhite/80">Heavyweight cotton · structured, not flimsy</p>
-            </div>
-            <div>
-              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Fit</p>
-              <p className="data-mono text-xs text-offwhite/80">Regular · unisex · true to size</p>
-            </div>
-            <div>
-              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Print</p>
-              <p className="data-mono text-xs text-offwhite/80">Durable print, made to survive every wash</p>
-            </div>
-            <div>
-              <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Shipping</p>
-              <p className="data-mono text-xs text-offwhite/80">5–7 days · Spain, EU & worldwide</p>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* THE PROCESS */}
@@ -388,7 +300,7 @@ function Index() {
             {
               num: "03",
               title: "We make it",
-              copy: "Every print and garment is made to order — checked piece by piece before it ships. No warehouse, no leftovers. Just your climb, made for you.",
+              copy: "Every print is made to order — checked piece by piece before it ships. No warehouse, no leftovers. Just your climb, made for you.",
             },
           ].map((step) => (
             <div key={step.num}>
@@ -486,8 +398,8 @@ function Index() {
           </div>
           <div>
             <p className="data-label mb-3 text-offwhite/50">Contact</p>
-            <a href="mailto:hola@col.cc" className="text-offwhite/80 hover:text-mustard transition-colors">
-              hola@col.cc
+            <a href="mailto:hello@colcc.cc" className="text-offwhite/80 hover:text-mustard transition-colors">
+              hello@colcc.cc
             </a>
           </div>
           <div>
@@ -499,7 +411,25 @@ function Index() {
             </div>
           </div>
         </div>
-        <p className="data-mono text-xs text-offwhite/50 mt-12">
+        {/* Legal */}
+        <div className="border-t border-offwhite/15 mt-12 pt-8 flex flex-wrap gap-x-6 gap-y-2 data-mono text-xs">
+          <Link to="/legal/$doc" params={{ doc: "aviso-legal" }} className="text-offwhite/60 hover:text-mustard transition-colors">
+            Aviso legal
+          </Link>
+          <Link to="/legal/$doc" params={{ doc: "privacidad" }} className="text-offwhite/60 hover:text-mustard transition-colors">
+            Privacidad
+          </Link>
+          <Link to="/legal/$doc" params={{ doc: "cookies" }} className="text-offwhite/60 hover:text-mustard transition-colors">
+            Cookies
+          </Link>
+          <Link to="/legal/$doc" params={{ doc: "terminos" }} className="text-offwhite/60 hover:text-mustard transition-colors">
+            Términos y condiciones
+          </Link>
+          <Link to="/legal/$doc" params={{ doc: "devoluciones" }} className="text-offwhite/60 hover:text-mustard transition-colors">
+            Devoluciones
+          </Link>
+        </div>
+        <p className="data-mono text-xs text-offwhite/50 mt-8">
           © {new Date().getFullYear()} col.cc · The climb, remembered.
         </p>
       </footer>
