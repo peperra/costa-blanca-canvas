@@ -16,11 +16,11 @@ type Doc = {
   blocks: Block[];
 };
 
-const UPDATED = "21 de junio de 2026";
+const UPDATED = "4 de julio de 2026";
 
 const TITULAR = "María Vilas";
 const NIF = "53487155B";
-const DOMICILIO = "Paseo de Europa 7, San Sebastián de los Reyes, Madrid";
+const DOMICILIO = "Paseo de Europa 7, 28703 San Sebastián de los Reyes (Madrid)";
 
 const docs: Record<string, Doc> = {
   "aviso-legal": {
@@ -42,7 +42,7 @@ const docs: Record<string, Doc> = {
       },
       { h: "2. Objeto" },
       {
-        p: "Este sitio web (col.cc) tiene por objeto la venta de láminas artísticas inspiradas en los puertos de montaña de la Costa Blanca. El acceso y uso del sitio implica la aceptación de las condiciones recogidas en este Aviso legal.",
+        p: "Este sitio web (col.cc) tiene por objeto la venta de láminas artísticas y prendas de vestir inspiradas en los puertos de montaña de la Costa Blanca. El acceso y uso del sitio implica la aceptación de las condiciones recogidas en este Aviso legal.",
       },
       { h: "3. Propiedad intelectual e industrial" },
       {
@@ -150,7 +150,7 @@ const docs: Record<string, Doc> = {
       },
       { h: "2. Productos" },
       {
-        p: "Ofrecemos láminas artísticas. Los productos se fabrican bajo demanda (made to order) en edición abierta. Las imágenes son orientativas; pueden existir ligeras variaciones de color propias de cada lote de impresión.",
+        p: "Ofrecemos láminas artísticas y prendas de vestir. Los productos se fabrican bajo demanda (made to order) en edición abierta. Las imágenes son orientativas; pueden existir ligeras variaciones de color propias de cada lote de impresión.",
       },
       { h: "3. Precios" },
       {
