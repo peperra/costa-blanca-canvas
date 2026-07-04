@@ -18,11 +18,9 @@ type Doc = {
 
 const UPDATED = "21 de junio de 2026";
 
-// Datos pendientes de rellenar con la información real del titular.
-const TITULAR = "[NOMBRE Y APELLIDOS / RAZÓN SOCIAL]";
-const NIF = "[NIF / CIF]";
-const DOMICILIO = "[DOMICILIO COMPLETO]";
-const PROVEEDOR_IMPRESION = "[PROVEEDOR DE IMPRESIÓN Y PAÍS]";
+const TITULAR = "María Vilas";
+const NIF = "53487155B";
+const DOMICILIO = "Paseo de Europa 7, San Sebastián de los Reyes, Madrid";
 
 const docs: Record<string, Doc> = {
   "aviso-legal": {
@@ -44,7 +42,7 @@ const docs: Record<string, Doc> = {
       },
       { h: "2. Objeto" },
       {
-        p: "Este sitio web (col.cc) tiene por objeto la venta de láminas artísticas y prendas de vestir inspiradas en los puertos de montaña de la Costa Blanca. El acceso y uso del sitio implica la aceptación de las condiciones recogidas en este Aviso legal.",
+        p: "Este sitio web (col.cc) tiene por objeto la venta de láminas artísticas inspiradas en los puertos de montaña de la Costa Blanca. El acceso y uso del sitio implica la aceptación de las condiciones recogidas en este Aviso legal.",
       },
       { h: "3. Propiedad intelectual e industrial" },
       {
@@ -98,7 +96,7 @@ const docs: Record<string, Doc> = {
         list: [
           "Stripe — procesamiento de pagos.",
           "Vercel — alojamiento (hosting) del sitio web.",
-          `${PROVEEDOR_IMPRESION} — fabricación y envío de los productos.`,
+          "Empresa de transporte (agencia de mensajería / Correos) — entrega de los pedidos.",
         ],
       },
       { h: "6. Transferencias internacionales" },
@@ -152,7 +150,7 @@ const docs: Record<string, Doc> = {
       },
       { h: "2. Productos" },
       {
-        p: "Ofrecemos láminas artísticas y prendas de vestir. Los productos se fabrican bajo demanda (made to order) en edición abierta. Las imágenes son orientativas; pueden existir ligeras variaciones de color propias de cada lote de impresión.",
+        p: "Ofrecemos láminas artísticas. Los productos se fabrican bajo demanda (made to order) en edición abierta. Las imágenes son orientativas; pueden existir ligeras variaciones de color propias de cada lote de impresión.",
       },
       { h: "3. Precios" },
       {
@@ -168,7 +166,7 @@ const docs: Record<string, Doc> = {
           "Plazo estimado: 5–7 días hábiles.",
           "Envío gratuito dentro de España.",
           "Realizamos envíos a la Unión Europea y al resto del mundo; los gastos aplicables se muestran antes de pagar.",
-          `Los productos son fabricados y enviados por ${PROVEEDOR_IMPRESION}.`,
+          `Los pedidos son preparados y enviados directamente por ${TITULAR}.`,
         ],
       },
       { h: "6. Desistimiento y devoluciones" },
