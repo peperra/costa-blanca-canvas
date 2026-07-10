@@ -323,8 +323,8 @@ function Index() {
             </h2>
           </div>
           <div className="space-y-8 font-serif text-xl md:text-2xl text-offwhite/90 leading-snug text-center">
-            <p>Spain is where European cycling comes to survive the winter. Mild light, endless climbs, roads built into mountains that have barely changed in a hundred years.</p>
-            <p>The roads climb differently in every region. And the silence at the top of a col — that's the same everywhere.</p>
+            <p>Spain has been climbing mountains on two wheels for a hundred years — long before anyone else discovered these roads. The Vuelta. The legends. The passes with names cyclists here have known since childhood.</p>
+            <p>Every region climbs differently. But the silence at the top of a col is the same everywhere.</p>
             <p>But these roads belong to someone. To the farmer on the tractor at 7am. To the woman walking to the market. To the kid on the school bus on the narrow road above the valley. They were here before the pelotons arrived. They'll be here long after.</p>
             <p>col.cc started here. Not to claim these places — but to honour them. To turn climbs into memories worth keeping. And to make sure the people who live here are glad we came.</p>
             <p className="font-serif italic text-mustard">Every climb has a community. Every road belongs to someone.</p>
