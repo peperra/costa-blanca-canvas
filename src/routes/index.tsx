@@ -83,19 +83,19 @@ const climbs = [
 
 
 const cyclistPledges = [
-  "We greet. A wave to the farmer. A nod at the bar. A buenos días that means it.",
-  "We stop. For the school bus. For the tractor. For the old man walking his dog on the narrow road.",
-  "We support. Every café stop, every village shop. That's how this place stays alive.",
-  "We carry out. Every gel wrapper. Every bottle. Everything we brought in, we take back out.",
-  "We try. A word in Spanish. A gràcies in Valencian. Enough to show we know where we are.",
-  "We remember. This is someone's home. Not our training camp. Not our playground.",
+  "We ride single file. The moment a car wants to pass, not a second later.",
+  "We signal. A raised hand, a clear line — cars aren't mind readers.",
+  "We say thanks. A nod when a car gives us room.",
+  "We don't block. Ten riders across a lane is a wall, not a peloton.",
+  "We stay predictable. No swerving. No surprises.",
+  "We remember. This road belongs to drivers too.",
 ];
 
-const localPledges = [
+const driverPledges = [
   "We wave back. Even when there are twenty of them.",
-  "We slow down. When we pass them on the road.",
   "We give space. One and a half metres. No closer.",
-  "We know they chose here. Of all the places in the world.",
+  "We wait our turn. If the bend's too tight to pass, we wait for the straight.",
+  "We stay calm. A horn on a climb does nothing but scare.",
 ];
 
 function PrintIllustration({ variant }: { variant: number }) {
@@ -344,7 +344,8 @@ function Index() {
 
           <p className="font-serif italic text-lg md:text-xl text-asphalt mb-16 leading-relaxed">
             We've all seen it. Cyclist Go Home. Painted on a wall, somewhere on a climb you love.
-            We understand why it's there. This is our answer — and our ask.
+            We get it. Some cyclists ride like the road is theirs alone. Some drivers overtake like
+            cyclists don't exist. This is our pledge — for both sides of the same road.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
@@ -363,9 +364,9 @@ function Index() {
             </div>
 
             <div>
-              <p className="data-label mb-8 text-mustard">For the local</p>
+              <p className="data-label mb-8 text-mustard">For the driver</p>
               <ul className="space-y-6">
-                {localPledges.map((pledge, i) => (
+                {driverPledges.map((pledge, i) => (
                   <li key={i} className="flex gap-4">
                     <span className="data-mono text-xs text-asphalt/40 mt-1 shrink-0">
                       {String(i + 1).padStart(2, "0")}
