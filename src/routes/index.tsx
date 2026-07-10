@@ -319,14 +319,14 @@ function Index() {
           <div className="hairline pt-8 mb-16 text-center border-offwhite/20">
             <p className="data-label mb-3 text-mustard">Origin</p>
             <h2 className="font-serif text-4xl md:text-5xl text-offwhite">
-              Born on these roads.
+              Born in Spain.
             </h2>
           </div>
           <div className="space-y-8 font-serif text-xl md:text-2xl text-offwhite/90 leading-snug text-center">
-            <p>Costa Blanca is where European cycling comes to survive the winter.</p>
-            <p>The light is different here. The roads climb differently. And the silence at the top of a col — that's different too.</p>
-            <p>But these roads belong to someone. To the farmer on the tractor at 7am. To the woman walking to the market in Alcalalí. To the kid on the school bus on the narrow road above Jalón. They were here before the pelotons arrived. They'll be here long after.</p>
-            <p>col.cc was born here. Not to claim this place — but to honour it. To turn those climbs into memories worth keeping. And to make sure the people who live here are glad we came.</p>
+            <p>Spain is where European cycling comes to survive the winter. Mild light, endless climbs, roads built into mountains that have barely changed in a hundred years.</p>
+            <p>The roads climb differently in every region. And the silence at the top of a col — that's the same everywhere.</p>
+            <p>But these roads belong to someone. To the farmer on the tractor at 7am. To the woman walking to the market. To the kid on the school bus on the narrow road above the valley. They were here before the pelotons arrived. They'll be here long after.</p>
+            <p>col.cc started here. Not to claim these places — but to honour them. To turn climbs into memories worth keeping. And to make sure the people who live here are glad we came.</p>
             <p className="font-serif italic text-mustard">Every climb has a community. Every road belongs to someone.</p>
           </div>
         </div>
@@ -390,7 +390,7 @@ function Index() {
         <div className="border-t border-offwhite/20 pt-10 grid grid-cols-2 md:grid-cols-4 gap-8 items-start">
           <div>
             <img src={logoWordmark} alt="col.cc" className="h-7 w-auto mb-3 brightness-0 invert" />
-            <p className="data-mono text-xs text-offwhite/60">Born in Costa Blanca</p>
+            <p className="data-mono text-xs text-offwhite/60">Born in Spain</p>
           </div>
           <div>
             <p className="data-label mb-3 text-offwhite/50">Follow</p>
