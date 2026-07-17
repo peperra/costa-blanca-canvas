@@ -229,7 +229,7 @@ function Index() {
               <div className="bg-forest px-6 pt-5 pb-6 flex flex-col flex-1">
                 <div className="flex items-center justify-between mb-4">
                   <span className="data-label text-offwhite/50 text-xs tracking-widest">Art Print</span>
-                  <span className="data-label text-teal text-xs tracking-widest">A3 · Premium print</span>
+                  <span className="data-label text-teal text-xs tracking-widest">A3 · Premium</span>
                 </div>
                 <h3 className="font-serif text-offwhite text-2xl md:text-3xl mb-5 leading-tight">{c.name}</h3>
 
@@ -258,7 +258,7 @@ function Index() {
           <div className="border-t border-offwhite/15 pt-8 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
               <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Paper</p>
-              <p className="data-mono text-xs text-offwhite/80">300 gsm · Fine art matte · Premium print</p>
+              <p className="data-mono text-xs text-offwhite/80">300 gsm · Fine art matte · Premium</p>
             </div>
             <div>
               <p className="data-label text-offwhite/40 text-[10px] tracking-widest mb-2">Format</p>
